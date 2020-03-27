@@ -29,7 +29,7 @@ int main ()
   //std::future<bool> fut2 = std::async (is_prime,87178291199);
   std::future<int> fut3 = std::async (std::launch::async,get_prime,871782922);
   std::future<int> fut4 = std::async (std::launch::async,get_prime,871782920);
-  int n = 20;
+  int n = 40;
   std::future<int> fut[n];
   for ( int i =0;i<n;i++){
     fut[i] = std::async (std::launch::async,get_prime,871782918);
