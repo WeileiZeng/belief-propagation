@@ -4,9 +4,7 @@
 
 // a non-optimized way of checking for prime numbers:
 
- 
-
-	  
+ 	  
 bool is_prime (int x) {
   std::cout << "wait..."<<x<<"\n";
   for ( int i = 0; i<x; i++) double a=100*15-1/4.1+133.1/2.77/3.88*i+1.3*i;
@@ -32,7 +30,7 @@ int main ()
   int n = 40;
   std::future<int> fut[n];
   for ( int i =0;i<n;i++){
-    fut[i] = std::async (std::launch::async,get_prime,871782918);
+    fut[i] = std::async (std::launch::async,get_prime,71782918);
   }
 
   int num = fut3.get();

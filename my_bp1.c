@@ -1,15 +1,5 @@
-//updated on Dec 9.
-//using optimizations (compared with bp_decoding3.c)
-// bits_out = llr_output < bound,
-// repeat decoding
-//the input become syndrome, not the error vector. (this should not be the difference or produce any differenc ein the result. If I have time, I will implement it in bp_decoding3.c
-//exit at 200 ant repeat 5 times
-
-//In order to change to z error only, there is no change needed for this code. Just use the new generating matrix. 2/10/2018
-//Compared to bp_decoding2.c, in this file,I save all data for errors that converge or not converge in bp decoding.
-//In this file, for toric code, we use stabilizer S=(S_x,S_z).
-//errors are in the format e=(e_z,e_x). (bistin, recbits, bitsout) //not checked excatly, based on the assumption that the BP decoding in itpp doesnot know the difference between X and Z errors and operators.
-//hello world
+//Weilei  March 26, 2020. yse c++ async to manage multi threads
+// copied from bp_decoding4.c
 
 #include <itpp/itbase.h>
 #include <itpp/itcomm.h>
@@ -30,8 +20,6 @@ int main(int argc, char **argv){
   char * filename_result=argv[3];//prefix for the file
   double p=atof(argv[4]);
   p=p/100000.0;//previous use 1000 division. Now use 100,000 division cause the thershold for toric codes seems to be around 0.1%.
-  //  cout<<"prob p ="<<p<<endl;
-  //cout<<"input file -->"<<filename_G<<endl;
 
   //parameter setup
   int cycles=3000;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
@@ -51,9 +39,6 @@ int main(int argc, char **argv){
   //    LDPC_Code C=MM_to_LDPC_Code(filename_G);  //convert GF2mat saved in .mm file to LDPC_Code
   //LDPC_Code C = get_test_LDPC_Code();
   
-  //LDPC_Code C(filename_G);//load code if saved in .it file with LDPC_Code format
-  //vec pvals = "0.01:0.01:0.1"; p.get(pvals,"pvals");// start:increment:end=inclusive
-
   //bp decoding set up
   C.set_exit_conditions(exit_at_iteration,true,true);//high perperformance. This number of iteration would not affect small errors which converges and stop very fast. Only affect those doesn't converge soon or not converge at all.
   //  C.set_exit_conditions(50,true,true);  // 50 iterations,check syndrome always
@@ -234,26 +219,7 @@ cout<<"rec_bits"<<endl;
   cout<<", Converge rate ="<<rate_converge<<endl;
   //  save_result(p,rate_converge,filename_result_p);//no need to save this. can get it by counting the size of the matrix when doing gnuplot
   
-  //save errors to files
-  char filename_result_ic[255];
-  sprintf( filename_result_ic,"%s%.5f_input_converge",filename_result,p);//append p to the file name
-  //cout<<E_input_converge.rows()<<endl;
-  GF2mat_to_MM(E_input_converge,filename_result_ic);  
-    
-  char filename_result_in[255];
-  sprintf( filename_result_in,"%s%.5f_input_nonconverge",filename_result,p);//append p to the file name
-  GF2mat_to_MM(E_input_nonconverge,filename_result_in);  
 
-  char filename_result_oc[255];
-  sprintf( filename_result_oc,"%s%.5f_output_converge",filename_result,p);//append p to the file name
-  GF2mat_to_MM(E_output_converge,filename_result_oc);  
-
-  char filename_result_on[255];
-  sprintf( filename_result_on,"%s%.5f_output_nonconverge",filename_result,p);//append p to the file name
-  GF2mat_to_MM(E_output_nonconverge,filename_result_on);  
-  
-  //  cout<<E_input_nonconverge<<endl;
-  // cout<<E_input_converge<<endl;
   timer.toc_print();
   return 0;
 }
