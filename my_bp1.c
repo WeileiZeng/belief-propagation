@@ -60,8 +60,9 @@ int main(int argc, char **argv){
 	  //printf("%d", *it);
 	   if ( it->wait_for(span) == future_status::ready){
 	    cout<<"."<<endl;
-	    pool.erase(it);
+	    pool.erase(it);	    
 	    cout<<"remove thread. "<<pool.size()<<endl;
+	    it--;
 	    //break;
 	  }
 	  }
@@ -85,7 +86,7 @@ int main(int argc, char **argv){
 
 int decode( GF2mat G, GF2mat H, double p, string filename_result_p){
   //parameter setup
-  int cycles=500;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
+  int cycles=50;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
   int exit_at_iteration=50;//parameter for bp decoding set_exit_condition()
   //  int bound= (int) -4096 * log (p/(1-p));// -300; see note.pdf on how to choose bound
   int bound = 0;
