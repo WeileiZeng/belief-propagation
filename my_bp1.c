@@ -22,7 +22,7 @@ int main(int argc, char **argv){
   p=p/100000.0;//previous use 1000 division. Now use 100,000 division cause the thershold for toric codes seems to be around 0.1%.
 
   //parameter setup
-  int cycles=3000;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
+  int cycles=30;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
   int exit_at_iteration=50;//parameter for bp decoding set_exit_condition()
   //  int bound= (int) -4096 * log (p/(1-p));// -300; see note.pdf on how to choose bound
   int bound = 0;
