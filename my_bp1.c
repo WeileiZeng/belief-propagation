@@ -15,10 +15,20 @@ using namespace itpp;
 //input:source file for stabilzier matrix; error propability p ;
 
 int main(int argc, char **argv){
-  char * filename_G=argv[1]; GF2mat G =MM_to_GF2mat(filename_G);
-  char * filename_H=argv[2]; GF2mat H =MM_to_GF2mat(filename_H);
-  char * filename_result=argv[3];//prefix for the file
-  double p=atof(argv[4]);
+  Parser parser;
+  parser.init(argc,argv);
+  //p.set_silentmode(true);
+  string filename_G, filename_H, filename_result;
+  parser.get(filename_G,"filename_G");
+  parser.get(filename_H,"filename_H");
+  parser.get(filename_result,"filename_result");
+  GF2mat G =MM_to_GF2mat(filename_G);
+  GF2mat H =MM_to_GF2mat(filename_H);
+
+  //char * filename_result=argv[3];//prefix for the file
+  double p;
+  parser.get(p,"p");
+  //atof(argv[4]);
   p=p/100000.0;//previous use 1000 division. Now use 100,000 division cause the thershold for toric codes seems to be around 0.1%.
 
   //parameter setup

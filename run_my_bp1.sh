@@ -29,7 +29,7 @@ do
 	     #for i in {2000..2000..100}
     do
     #add G matrix on Dec 14
-	./my_bp1.out ${stabilizer_folder}/toric_S_x_size_${size}.mm ${stabilizer_folder}/toric_S_z_size_${size}.mm ${error_folder}/toric_S_size_${size}.mm_rate $i &
+	./my_bp1.out filename_G=${stabilizer_folder}/toric_S_x_size_${size}.mm filename_H=${stabilizer_folder}/toric_S_z_size_${size}.mm filename_result=${error_folder}/toric_S_size_${size}.mm_rate p=$i &
 	echo $i
 	num_process=`pgrep -c decoding`
 	while (( num_process > 15 ))
