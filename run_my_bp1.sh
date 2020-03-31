@@ -25,8 +25,8 @@ do
     
     echo start run_save_bp.sh for size ${size}
     date
-    for i in {100..5000..100}
-	     #for i in {2000..2000..100}
+    #for i in {100..5000..100}
+    for i in {2000..2000..100}
     do
     #add G matrix on Dec 14
 	./my_bp1.out filename_G=${stabilizer_folder}/toric_S_x_size_${size}.mm filename_H=${stabilizer_folder}/toric_S_z_size_${size}.mm filename_result=${error_folder}/toric_S_size_${size}.mm_rate p=$i &
