@@ -16,7 +16,7 @@ using namespace itpp;
 // Read the code from files and do BP decoding
 //input:source file for stabilzier matrix; error propability p ;
 
-int decode( GF2mat G, GF2mat H, double p, string filename_result_p);
+int decode( GF2mat G, GF2mat H, double p, string filename_result_p, mat * data, int col_index, int row_index);
   
 int main(int argc, char **argv){
   Parser parser;
@@ -28,7 +28,7 @@ int main(int argc, char **argv){
   //parser.get(filename_result,"filename_result");
   
   vector<future<int>> pool;
-  int pool_size=10;
+  vector<future<int>>::size_type pool_size=10;
   std::chrono::milliseconds span (100);
   //change parameter p, code size
   //char * filename_result=argv[3];//prefix for the file
@@ -37,12 +37,21 @@ int main(int argc, char **argv){
   int sizes[]= {13,11,9,7,5};
   string stabilizer_folder="data/toric/stabilizer";
   string error_folder="data/toric/bp_decoding4";
+  //return result in a mat
+  mat data(50,5*5);
+  data.zeros();
+  //data.set(1,2,2.5);
+  //cout<<data<<endl;
+  //return 0;
+  int col_index=-5;
   for ( int size : sizes){
-
+    col_index +=5;//5 col for each size
     filename_G = stabilizer_folder + "/toric_S_x_size_" + to_string(size) + ".mm";
     filename_H = stabilizer_folder + "/toric_S_z_size_" + to_string(size) + ".mm";
     filename_result = error_folder + "/toric_S_size_" + to_string(size) + ".mm_rate";
+    int row_index=-1;
     for ( int ip=100;ip<5001;ip+=100){
+      row_index ++;
       //atof(argv[4]);
       p=ip/100000.0;//previous use 1000 division. Now use 100,000 division cause the thershold for toric codes seems to be around 0.1%.
       char filename_result_p[255];
@@ -70,7 +79,7 @@ int main(int argc, char **argv){
     
       // future<int> fut = async(launch::async, decode,G, H, p, filename_result_p);
       //pool.push_back(move(fut));
-      pool.push_back(async(launch::async, decode,G, H, p, filename_result_p));
+      pool.push_back(async(launch::async, decode,G, H, p, filename_result_p, &data,col_index, row_index));
       
       cout<<"add new thread. "<<pool.size()<<endl;
       //int num = fut.get();
@@ -81,12 +90,19 @@ int main(int argc, char **argv){
     }
     //break;
   }
+  //wait all process to finish
+  for(vector <future<int>> :: iterator it = pool.begin(); it != pool.end(); ++it){
+    it->get();
+  }
+  //print result
+  cout<<"data = "<<data<<endl;
+  mat2gnudata(data,"gnuplot/result/data.gnudat","#some header");
   return 0;
 }
 
-int decode( GF2mat G, GF2mat H, double p, string filename_result_p){
+int decode( GF2mat G, GF2mat H, double p, string filename_result_p, mat * data, int col_index, int row_index){
   //parameter setup
-  int cycles=50;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
+  int cycles=10;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
   int exit_at_iteration=50;//parameter for bp decoding set_exit_condition()
   //  int bound= (int) -4096 * log (p/(1-p));// -300; see note.pdf on how to choose bound
   int bound = 0;
@@ -278,6 +294,11 @@ cout<<"rec_bits"<<endl;
   cout<<", p = "<<p;
   cout<<", Converge rate ="<<rate_converge<<endl;
   //  save_result(p,rate_converge,filename_result_p);//no need to save this. can get it by counting the size of the matrix when doing gnuplot
+
+  //save result to mat data, suing row_index and col_index
+  //data entries: p, rate
+  data->set(row_index,col_index,p);
+  data->set(row_index,col_index+1,rate_converge);
   
   timer.toc_print();
   return 0;

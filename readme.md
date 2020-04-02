@@ -5,7 +5,8 @@
 * Mar 30
   * change input method
   * change parallel thread from shell to c++
-  - [ ] get run result
+- Apr 1
+  - [x] get run result and save
   - [ ] plot result
   - [ ] replace bp decoding
 
