@@ -8,6 +8,7 @@
 #include <sstream>
 #include <stdio.h>
 #include "my_lib.h"
+#include <math.h>
 using namespace std;
 using namespace itpp;
 
@@ -16,7 +17,7 @@ using namespace itpp;
 // Read the code from files and do BP decoding
 //input:source file for stabilzier matrix; error propability p ;
 
-int decode( GF2mat G, GF2mat H, double p, string filename_result_p, mat * data, int col_index, int row_index);
+int decode( GF2mat G, GF2mat H, double p, mat * data, int col_index, int row_index);
   
 int main(int argc, char **argv){
   Parser parser;
@@ -28,7 +29,7 @@ int main(int argc, char **argv){
   //parser.get(filename_result,"filename_result");
   
   vector<future<int>> pool;
-  vector<future<int>>::size_type pool_size=10;
+  vector<future<int>>::size_type pool_size=15;
   std::chrono::milliseconds span (100);
   //change parameter p, code size
   //char * filename_result=argv[3];//prefix for the file
@@ -36,32 +37,31 @@ int main(int argc, char **argv){
   //parser.get(p,"p");
   int sizes[]= {13,11,9,7,5};
   string stabilizer_folder="data/toric/stabilizer";
-  string error_folder="data/toric/bp_decoding4";
-  //return result in a mat
-  mat data(50,5*5);
+  //string error_folder="data/toric/bp_decoding4";
+  mat data(50,5*5);   //return result in a mat, 5 columns for each size. format defines in header
   data.zeros();
-  //data.set(1,2,2.5);
-  //cout<<data<<endl;
-  //return 0;
   int col_index=-5;
   for ( int size : sizes){
+    //    cout<<"size = "<<size<<endl;
     col_index +=5;//5 col for each size
     filename_G = stabilizer_folder + "/toric_S_x_size_" + to_string(size) + ".mm";
     filename_H = stabilizer_folder + "/toric_S_z_size_" + to_string(size) + ".mm";
-    filename_result = error_folder + "/toric_S_size_" + to_string(size) + ".mm_rate";
+    //filename_result = error_folder + "/toric_S_size_" + to_string(size) + ".mm_rate";
     int row_index=-1;
-    for ( int ip=100;ip<5001;ip+=100){
+    for ( double ip=-1;ip > -3;ip-=0.1){
+      //cout<<"ip = "<<ip<<endl;
       row_index ++;
       //atof(argv[4]);
-      p=ip/100000.0;//previous use 1000 division. Now use 100,000 division cause the thershold for toric codes seems to be around 0.1%.
-      char filename_result_p[255];
-      sprintf( filename_result_p,"%s%.5f",filename_result.c_str(),p);//append p in the file name
-      string filename_result_p_string(filename_result_p);
+      p=pow(10,ip);
+      //p=ip/100000.0;//previous use 1000 division. Now use 100,000 division cause the thershold for toric codes seems to be around 0.1%.
+      //char filename_result_p[255];
+      //sprintf( filename_result_p,"%s%.5f",filename_result.c_str(),p);//append p in the file name
+      //string filename_result_p_string(filename_result_p);
       //cout<<filename_result_p_string<<endl;
-      GF2mat G =MM_to_GF2mat(filename_G);
+      GF2mat G =MM_to_GF2mat(filename_G);      
       GF2mat H =MM_to_GF2mat(filename_H);
 
-      //manage thread      
+      //manage thread within limit of pool size
       while ( pool.size() >= pool_size ){
 	//wait until some of them finish
 	//break;
@@ -70,7 +70,7 @@ int main(int argc, char **argv){
 	   if ( it->wait_for(span) == future_status::ready){
 	    cout<<"."<<endl;
 	    pool.erase(it);	    
-	    cout<<"remove thread. "<<pool.size()<<endl;
+	    cout<<"remove thread. pool_size="<<pool.size()<<endl;
 	    it--;
 	    //break;
 	  }
@@ -79,38 +79,45 @@ int main(int argc, char **argv){
     
       // future<int> fut = async(launch::async, decode,G, H, p, filename_result_p);
       //pool.push_back(move(fut));
-      pool.push_back(async(launch::async, decode,G, H, p, filename_result_p, &data,col_index, row_index));
+      pool.push_back(async(launch::async, decode,G, H, p, &data,col_index, row_index));
       
-      cout<<"add new thread. "<<pool.size()<<endl;
-      //int num = fut.get();
-      //cout<<"num = "<<num<<endl;
-
-      //decode( G, H, p, filename_result_p);
-      //break;
+      cout<<"add new thread. pool_size="<<pool.size()
+	  <<", size = "<<size
+	  <<", p = "<<p
+	  <<", row_index = "<<row_index
+	  <<", col_index = "<<col_index
+	  <<endl;
     }
-    //break;
   }
   //wait all process to finish
   for(vector <future<int>> :: iterator it = pool.begin(); it != pool.end(); ++it){
     it->get();
   }
   //print result
-  cout<<"data = "<<data<<endl;
-  mat2gnudata(data,"gnuplot/result/data.gnudat","#some header");
+  //cout<<"data = "<<data<<endl;
+  string header="#header\nsizes: ";
+  for (int size : sizes){
+    header += to_string(size) + ", ";
+  }
+  header += ("\n p, P_c converge rate, zero error vectors, weight one error, weight 2 error");
+  string filename_data="gnuplot/result/iteration0-cycle1000.gnudat";
+  mat2gnudata(data,filename_data,header);
+  cout<<"save data to "<<filename_data.c_str()<<endl;
   return 0;
 }
 
-int decode( GF2mat G, GF2mat H, double p, string filename_result_p, mat * data, int col_index, int row_index){
+//*********************** bp decoding function by itpp
+
+int decode( GF2mat G, GF2mat H, double p,  mat * data, int col_index, int row_index){
   //parameter setup
-  int cycles=10;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
+  int cycles=1000;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
   int exit_at_iteration=50;//parameter for bp decoding set_exit_condition()
   //  int bound= (int) -4096 * log (p/(1-p));// -300; see note.pdf on how to choose bound
   int bound = 0;
-  int max_repetition = 20;//10 for best result. supposed to be zero in our set up, just for a check
+  int max_repetition = 0;//10 for best result. supposed to be zero in our set up, just for a check
   
   
   Real_Timer timer;
-
   LDPC_Code C=GF2mat_to_LDPC_Code(H);  //convert GF2mat saved in .mm file to LDPC_Code
   //    LDPC_Code C=MM_to_LDPC_Code(filename_G);  //convert GF2mat saved in .mm file to LDPC_Code
   //LDPC_Code C = get_test_LDPC_Code();
@@ -128,19 +135,23 @@ int decode( GF2mat G, GF2mat H, double p, string filename_result_p, mat * data, 
   RNG_randomize();
   timer.tic(); 
 
-  double pp=p;//=0.05;//test error probability //=pvals(j);   //  double pp=pow(10.0,-pvals(j));
+  //double pp=p;//=0.05;//test error probability //=pvals(j);   //  double pp=pow(10.0,-pvals(j));
   //pp=0.01  ans~1;pp=0.03  ans=-2500
-  BSC bsc(pp); // initialize BSC, error channel with probability pp
+  BSC bsc(p); // initialize BSC, error channel with probability pp
   int ans=0; //the value return by bp_decoding(), which is the number of iterations and with a minus sign if it doesn't converge
       
 
 
   int counts_converge=0;
+  int counts_weight_zero=0;
+  int counts_weight_one=0;
+  int counts_weight_two=0;
   for (int i=0;i<cycles;i++){
     //bvec rec_bits = bitsin;   // input vector with manually-input errors, for test
     //    C.set_exit_conditions(2500);
     bvec rec_bits0 = bsc(bitsin);    // input vector with errors from bsc chanel
-    bvec rec_bits = find_error(rec_bits0,H);//switch to en error with same syndrome
+    //bvec rec_bits = find_error(rec_bits0,H);//switch to en error with same syndrome
+    bvec rec_bits=rec_bits0;
     
     //    bvec rec_bits( error_transform(rec_bits0,MM_to_GF2mat(filename_G)) ); //for test
 
@@ -185,7 +196,7 @@ int decode( GF2mat G, GF2mat H, double p, string filename_result_p, mat * data, 
     vec s(N), s0(N); // input LLR version 
     QLLRvec llr_output;
     for(int i1=0;i1<N;i1++)
-      s(i1)=s0(i1)=(rec_bits(i1)==1)?-log(1.0/pp-1.0):log(1.0/pp-1.0);//convert to input format for bp_decode  
+      s(i1)=s0(i1)=(rec_bits(i1)==1)?-log(1.0/p-1.0):log(1.0/p-1.0);//convert to input format for bp_decode  
     //cout<<"pp="<<pp<<"\t log(1.0/pp-1.0)="<<log(1.0/pp-1.0)<<endl;
     //cout<<"s="<<s<<endl;
   
@@ -243,7 +254,17 @@ int decode( GF2mat G, GF2mat H, double p, string filename_result_p, mat * data, 
     bitsout=bitsout+rec_bits+rec_bits0;//cancel input vector
     bitsout=reduce_weight( bitsout, G);//remove trivial cycles
     rec_bits=rec_bits0;//replace for compatibility for saving data
-    
+
+    //count weight
+    switch ( weight(rec_bits) ){
+    case 0:
+      counts_weight_zero++;break;
+    case 1:
+      counts_weight_one++;break;
+    case 2:
+      counts_weight_two++;break;
+    }
+      
     if(ans>=0){
       if ( current_iteration < 0 ){
 	//cout<<endl;
@@ -258,8 +279,8 @@ int decode( GF2mat G, GF2mat H, double p, string filename_result_p, mat * data, 
       cout<<"diff    ="<<rec_bits+bitsout<<endl;
       */
       //check min weight of bitsout?
-      E_input_converge = append_vector(E_input_converge, rec_bits);
-      E_output_converge = append_vector(E_output_converge, bitsout);//maybe all zero, but no harm to check            
+      //E_input_converge = append_vector(E_input_converge, rec_bits);
+      //E_output_converge = append_vector(E_output_converge, bitsout);//maybe all zero, but no harm to check            
       counts_converge++;
     }else{
       /*
@@ -272,8 +293,8 @@ int decode( GF2mat G, GF2mat H, double p, string filename_result_p, mat * data, 
       cout<<", \# of errors in bitsout  = "<<BERC::count_errors(bitsin,bitsout)<<endl;
       */
 
-      E_input_nonconverge = append_vector(E_input_nonconverge,rec_bits);
-      E_output_nonconverge = append_vector(E_output_nonconverge,bitsout);//this would be the input error for the random window decoder.
+      //E_input_nonconverge = append_vector(E_input_nonconverge,rec_bits);
+      //E_output_nonconverge = append_vector(E_output_nonconverge,bitsout);//this would be the input error for the random window decoder.
       // break;//break here to just print the first non converged error
     }
     //    cout<<"rec_bits0"<<endl;
@@ -299,6 +320,10 @@ cout<<"rec_bits"<<endl;
   //data entries: p, rate
   data->set(row_index,col_index,p);
   data->set(row_index,col_index+1,rate_converge);
+  data->set(row_index,col_index+2,1.0*counts_weight_zero/cycles);
+  data->set(row_index,col_index+3,1.0*counts_weight_one/cycles);
+  data->set(row_index,col_index+4,1.0*counts_weight_two/cycles);
+  //data->set(row_index,col_index+2,rate_converge);
   
   timer.toc_print();
   return 0;
