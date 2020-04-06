@@ -1,5 +1,7 @@
-//Weilei  March 26, 2020. yse c++ async to manage multi threads
-// copied from bp_decoding4.c
+//Weilei Apr 5, write a test for bp deocoding, using steane 5 qubit code
+
+
+// copied from my_bp_1.c
 #include <future>
 #include <string>
 #include <iostream>
@@ -18,7 +20,8 @@ using namespace itpp;
 //input:source file for stabilzier matrix; error propability p ;
 
 int decode( GF2mat G, GF2mat H, double p, mat * data, int col_index, int row_index);
-  
+
+
 int main(int argc, char **argv){
   Parser parser;
   parser.init(argc,argv);

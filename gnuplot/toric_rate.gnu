@@ -8,6 +8,7 @@ data_folder='result'
 data_title='iteration0-cycle1000'
 
 plot_title='-weight'
+plot_title=''
 
 data_file=data_folder.'/'.data_title.'.gnudat'
 
@@ -27,9 +28,9 @@ set logscale y
 set format y "10^{%L}"
 set logscale x
 set format x "10^{%L}"
-set xrange [0.001:0.1]
-set yrange [0.001:1]
-set title "converge rate of BP for toric code ".data_title
+set xrange [0.01:0.1]
+set yrange [0.01:1]
+set title "converge rate of BP for toric code ".data_title.plot_title
 
 set linetype cycle 5
 
@@ -43,12 +44,10 @@ size_set="13 11 9 7 5"
 color_set="violet blue red yellow black green"
 
 # plot rate
-#plot for [i=1:5] data_file using (column((i-1)*5+1)):(column((i-1)*5+2)) title 'size '.word(size_set,i)
+plot for [i=1:5] data_file using (column((i-1)*5+1)):(column((i-1)*5+2)) title 'size '.word(size_set,i) with linespoints ps 0.5 lc i
 
 # plot weight of input error
-plot for [i=1:5] data_file using (column((i-1)*5+1)):(column((i-1)*5+2)) title 'size '.word(size_set,i).' converge' ps 0.5,\
-for [i=1:5] data_file using (column((i-1)*5+1)):(column((i-1)*5+3) + column((i-1)*5+4)+ column((i-1)*5+5)) title 'size '.word(size_set,i).' weight 0+1+2' with lines linecolor i,\
-for [i=1:5] data_file using (column((i-1)*5+1)):(column((i-1)*5+3)) title 'size '.word(size_set,i).' weight 0' linecolor i dashtype ".-" with lines,
+# plot for [i=1:5] data_file using (column((i-1)*5+1)):(column((i-1)*5+2)) title 'size '.word(size_set,i).' converge' ps 0.5,for [i=1:5] data_file using (column((i-1)*5+1)):(column((i-1)*5+3) + column((i-1)*5+4)+ column((i-1)*5+5)) title 'size '.word(size_set,i).' weight 0+1+2' with lines linecolor i,for [i=1:5] data_file using (column((i-1)*5+1)):(column((i-1)*5+3)) title 'size '.word(size_set,i).' weight 0' linecolor i dashtype ".-" with lines,
 
 
 #plot data_file using 1:2 title 'size 13' with linespoints,\

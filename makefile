@@ -13,10 +13,10 @@ END=`pkg-config --libs itpp`
 
 #update:
 INC_DIR=~/working/weilei_lib
-files=$(INC_DIR)/mm_read.c $(INC_DIR)/mm_read.h $(INC_DIR)/mmio.c $(INC_DIR)/mmio.h $(INC_DIR)/mm_write.c $(INC_DIR)/mm_write.h $(INC_DIR)/lib.cpp $(INC_DIR)/lib.h $(INC_DIR)/dist.c $(INC_DIR)/dist.h $(INC_DIR)/concatenation_lib.c $(INC_DIR)/concatenation_lib.h $(INC_DIR)/my_lib.h makefile
-#command=$(CXX) -I../../weilei_lib $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(END)
+files=$(INC_DIR)/mm_read.c $(INC_DIR)/mm_read.h $(INC_DIR)/mmio.c $(INC_DIR)/mmio.h $(INC_DIR)/mm_write.c $(INC_DIR)/mm_write.h $(INC_DIR)/lib.cpp $(INC_DIR)/lib.h $(INC_DIR)/dist.c $(INC_DIR)/dist.h $(INC_DIR)/concatenation_lib.c $(INC_DIR)/concatenation_lib.h $(INC_DIR)/bp.c $(INC_DIR)/bp.h $(INC_DIR)/my_lib.h makefile
+#command=$(CXX) -I../../weilei_lib $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(word 14, $^) $(END)
 
-command=$(CXX) -std=c++11 -pthread -I $(INC_DIR) $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(END) ; echo finish making
+command=$(CXX) -std=c++11 -pthread -I $(INC_DIR) $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(word 14, $^) $(END) ; echo finish making
 
 
 
@@ -39,10 +39,10 @@ data_collect_perm_check.out:data_collect_perm_check.c $(files)
 	$(command)
 convert_data.out:convert_data.c $(files)
 	$(command)
-test.out:test.c
-	g++ -std=c++11 -pthread -o test.out test.c
-#test.out:test.c $(files)
-#	$(command)
+#test.out:test.c
+#	g++ -std=c++11 -pthread -o test.out test.c
+test.out:test.c $(files)
+	$(command)
 	./test.out
 #	$(CXX) $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(END)
 error_analysis.out:error_analysis.c mm_read.c mm_read.h mmio.c mmio.h mm_write.c mm_write.h my_lib.h
