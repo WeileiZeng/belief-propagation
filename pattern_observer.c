@@ -193,10 +193,10 @@ int main(int argc, char **argv){
 
   //parameter setup
   int cycles=1;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
-  int exit_at_iteration=1000;//parameter for bp decoding set_exit_condition()
+  int exit_at_iteration=999;//parameter for bp decoding set_exit_condition()
   //  int bound= (int) -4096 * log (p/(1-p));// -300; see note.pdf on how to choose bound
   int  bound = 0;
-  int max_repetition = 20;//10 for best result. supposed to be zero in our set up, just for a check       
+  int max_repetition = 0;//10 for best result. supposed to be zero in our set up, just for a check       
   
   /*char * filename_G=argv[1];
   char * filename_result=argv[2];//prefix for the file
@@ -260,9 +260,38 @@ int main(int argc, char **argv){
     */
     
     //    bvec rec_bits1( error_transform(rec_bits0,MM_to_GF2mat(filename_G)) ); //for test
-    bvec rec_bits= find_error(rec_bits0,H) ;
-    //    bvec rec_bits = rec_bits0;
 
+    //bvec rec_bits= find_error(rec_bits0,H) ;
+    bvec rec_bits = rec_bits0;
+    rec_bits.zeros();
+    rec_bits0.zeros();
+
+    switch ( 13) {
+    case 1:
+      rec_bits.set(0,1);
+      rec_bits0.set(0,1);
+      rec_bits.set(1,1);
+      rec_bits0.set(1,1);
+      break;
+    case 11:
+      rec_bits.set(63,1);
+      rec_bits0.set(63,1);
+      rec_bits.set(56,1);
+      rec_bits0.set(56,1);
+      break;
+    case 12:
+      rec_bits.set(49,1);
+      rec_bits0.set(49,1);
+      rec_bits.set(56,1);
+      rec_bits0.set(56,1);
+      break;
+    case 13:
+      rec_bits.set(35,1);
+      rec_bits0.set(35,1);
+      rec_bits.set(36,1);
+      rec_bits0.set(36,1);
+      break;
+    }
     
     //    cout<<rec_bits<<endl;
     //cout<<rec_bits0<<endl;
@@ -270,7 +299,7 @@ int main(int argc, char **argv){
     //manual input error for test
     //    rec_bits = bitsin; //zero vector
     //horizontally aligned double error 
-    //    rec_bits(0)=1;    rec_bits(1)=1; //not converge, loop between edges in a vertex
+    //rec_bits(0)=1;    rec_bits(1)=1; //not converge, loop between edges in a vertex
     //perpendicular double error
     //rec_bits(1+5)=1;    rec_bits(25+1)=1; //not converge, the error does not change, r vibirate around -600 or -300
 	
@@ -356,6 +385,7 @@ int main(int argc, char **argv){
       E_output_nonconverge = append_vector(E_output_nonconverge,bitsout);//this would be the input error for the random window decoder.
       // break;//break here to just print the first non converged error
     }
+    cout<<"rec_bits"<<endl;
     draw_toric_x_error(rec_bits);
     //int max_iteration = 10;//100; usually converge to zero with 3
     int current_iteration = ans;
@@ -400,7 +430,7 @@ int main(int argc, char **argv){
     draw_toric_x_error(rec_bits0);
     cout<<"sum"<<endl;
     draw_toric_x_error(rec_bits+bitsout+rec_bits0);
-    cout<<"reduced sum"<<endl;
+    cout<<"reduced sum (error remained after error correction)"<<endl;
     //    draw_toric_x_error(reduce_weight((rec_bits+bitsout+rec_bits0),G));
     //    cout<<"reduced weight = "<<weight(reduce_weight((rec_bits+bitsout+rec_bits0),G))<<endl;
     /*    bvec bits_bound = llr_output < -bound;

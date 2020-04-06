@@ -78,19 +78,69 @@ int thread_test()
 
 int bp_test(){
   cout<<"Test the bp_syndrome_llr function"<<endl;
-  GF2mat H = get_check(3,7);
+  //choose code
+
+  //toric code
+  int size=35;
+  string stabilizer_folder="data/toric/stabilizer";
+  string filename_H = stabilizer_folder + "/toric_S_z_size_" + to_string(size) + ".mm";
+  GF2mat H =MM_to_GF2mat(filename_H);
+
+  //GF2mat H = get_check(1,26); // repetition code
+
+
+  
   //  GF2mat H = get_check(2,7);
-  H = H.get_submatrix(0,0,2,6);
-  cout<<"parity check H = \n"<<H<<endl;
+  //  H = H.get_submatrix(0,0,2,6);
+  //  cout<<"parity check H = \n"<<H<<endl;
+  GF2matPrint(H);
   bvec error = zeros_b(H.cols());
-  error.set(0,1);
-  error.set(1,1);
-  error.set(2,1);
+  switch ( 2 ) {
+  case 0:
+    error.set(0,1);break;
+  case 1:
+    error.set(1,1);
+    //error.set(3,1);
+    error.set(0,1);
+    break;
+  case 11:
+    error.set(63,1);
+    //error.set(3,1);
+    error.set(56,1);
+    break;
+  case 12:
+    error.set(49,1);
+    //error.set(3,1);
+    error.set(56,1);
+    break;
+  case 13:
+    error.set(35,1);
+    //error.set(3,1);
+    error.set(36,1);
+    break;
+  case 2:
+    error.set(0,1);
+    error.set(1,1);
+    error.set(2,1);
+    error.set(3,1);
+    //  error.set(4,1);
+    error.set(5,1);
+    error.set(6,1);
+    error.set(7,1);
+    error.set(11,1);
+    break;
+  case 3:
+    for (int i =0; i<10; i++) error.set(2*i,1);break;
+
+  }
+  error=find_error(error,H);
+      
   cout<<"input error ="<<error<<endl;
+  
   bvec syndrome = (H*error);
   cout<<"syndrome = "<<syndrome<<endl;
   vec LLRin(H.cols());
-  double p =0.1;
+  double p =0.01;
   double LLR=log( (1-p)/p);
   LLRin.ones();
   LLRin = LLRin*LLR;    
@@ -98,16 +148,20 @@ int bp_test(){
   //LLRout.zeros();
   cout<<"LLRin  = "<< LLRin<<endl;
   //  cout<<"LLRout = "<< LLRout<<endl;
-  int exit_iteration = 5;
+  int exit_iteration = 2;
   int iteration = bp_syndrome_llr(H,syndrome,LLRin, LLRout, exit_iteration);
   cout<<" iteration = "<<iteration <<endl;
-  cout<<" LLRout = "<<LLRout<<endl;
+  //  cout<<" LLRout = "<<LLRout<<endl;
   bvec bits_out = LLRout < 0;
-  cout<<"bits_out = "<<bits_out<<endl;
-  cout<<"error    = "<<error<<endl;
+  //  cout<<"bits_out = "<<bits_out<<endl;
+  draw_toric_x_error(bits_out,"bits_out");
+  //cout<<"error    = "<<error<<endl;
+  draw_toric_x_error(error,"error");
+  cout<<"syndrome = "<<syndrome<<endl;
   bvec error_residue = error + bits_out;
   bvec syndrome_residue = H*error_residue;
-  cout<<"error_residue = "<< error_residue <<endl;
+  //  cout<<"error_residue = "<< error_residue <<endl;
+  draw_toric_x_error(error_residue,"error_residue");
   cout<<"syndrome_residue = "<< syndrome_residue <<endl;
   return 0;
 }

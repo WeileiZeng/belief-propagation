@@ -24,13 +24,13 @@ error_folder=data/toric/temp
 
 #size=13
 #for size in {5,7,9,11,13}
-for size in 5
+for size in 7
 do
     
     echo start pattern_observer.sh for size ${size}
     date
     #for i in {100..5000..100}
-    for i in 5000
+    for i in 1000
 	     #for i in {2000..2000..100}
     do
     
