@@ -17,7 +17,7 @@
   - [x] test repetition code
   - [x] test toric code and check result.
   - [x] compare with itpp LDPC_Code.bp_decode(). Most result are the same, but in toric code, error=[1 1 0 0 ... 0] get a different result, but error=[0 ... 0 1 1 0 ... 0] get the saem result. Not sure why and not sure if this produce a statistical different in lasrge number of tests
-  - [ ] run full simulation on multiple codes and compare
+  - [x] run full simulation on toric codes and compare. Itpp perform much better. It can even decode many double errors. The difference I oberserved in algorithm is that (a) itpp use intergers, which I thing only save some time to make it faster than float calculation. (b) BoxPlus. This might be an optimization, see [ref](http://sc.enseeiht.fr/doc/Seminar_Matz.pdf)
   
   
 

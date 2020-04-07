@@ -32,6 +32,8 @@ bp_decoding4.out:bp_decoding4.c $(files)
 	$(command)
 my_bp1.out:my_bp1.c $(files)
 	$(command)
+my_bp2.out:my_bp2.c $(files)
+	$(command)
 #bp_decoding3.out:bp_decoding3.c mm_read.c mm_read.h mmio.c mmio.h mm_write.c mm_write.h lib.cpp lib.h my_lib.h makefile
 bp_decoding3.out:bp_decoding3.c $(files)
 	$(command)
@@ -43,7 +45,7 @@ convert_data.out:convert_data.c $(files)
 #	g++ -std=c++11 -pthread -o test.out test.c
 test.out:test.c $(files)
 	$(command)
-	./test.out
+#	./test.out
 #	$(CXX) $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(END)
 error_analysis.out:error_analysis.c mm_read.c mm_read.h mmio.c mmio.h mm_write.c mm_write.h my_lib.h
 	$(CXX) $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(END)
