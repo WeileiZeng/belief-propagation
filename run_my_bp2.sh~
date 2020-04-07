@@ -1,3 +1,0 @@
-cp empty.log std.log
-make my_bp2.out >>std.log
-

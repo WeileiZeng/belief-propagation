@@ -100,7 +100,7 @@ int main(int argc, char **argv){
     header += to_string(size) + ", ";
   }
   header += ("\n p, P_c converge rate, zero error vectors, weight one error, weight 2 error");
-  string filename_data="gnuplot/result/my-bp2-iteration0-cycle200.gnudat";
+  string filename_data="gnuplot/result/my-bp2-iteration0-cycle1000-Dint2-300.gnudat";
   mat2gnudata(data,filename_data,header);
   cout<<"save data to "<<filename_data.c_str()<<endl;
   return 0;
@@ -110,7 +110,7 @@ int main(int argc, char **argv){
 
 int decode( GF2mat G, GF2mat H, double p,  mat * data, int col_index, int row_index){
   //parameter setup
-  int cycles=200;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
+  int cycles=1000;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
   int exit_at_iteration=50;//parameter for bp decoding set_exit_condition()
   //  int bound= (int) -4096 * log (p/(1-p));// -300; see note.pdf on how to choose bound
   int bound = 0;
@@ -126,7 +126,7 @@ int decode( GF2mat G, GF2mat H, double p,  mat * data, int col_index, int row_in
   C.set_exit_conditions(exit_at_iteration,true,true);//high perperformance. This number of iteration would not affect small errors which converges and stop very fast. Only affect those doesn't converge soon or not converge at all.
   //  C.set_exit_conditions(50,true,true);  // 50 iterations,check syndrome always
   //C.set_llrcalc(LLR_calc_unit(12,300,7)); //(recommended settings with "exact" computation via high resolution lookup table)
-  C.set_llrcalc(LLR_calc_unit(12,0,7)); // fast mode; see "llr.h" //not good resolution for the result, produce more errors
+  C.set_llrcalc(LLR_calc_unit(12,300,7)); // fast mode; see "llr.h" //not good resolution for the result, produce more errors
   //  cout << C << endl;
   int N = C.get_nvar(); // number of bits per codeword; N=2 x n x n is the size of the toric code.
   

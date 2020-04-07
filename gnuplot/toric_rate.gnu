@@ -5,8 +5,10 @@ data_folder='result'
 
 #data_title='data-cycle100'
 #data_title='iteration10-cycle1000'
-data_title='iteration0-cycle1000'
-data_title='my-bp2-iteration0-cycle200'
+data_title='iteration0-cycle1000-Dint2-300'
+data_title='iteration0-cycle1000-Dint2-50'
+
+#data_title='my-bp2-iteration0-cycle200'
 
 plot_title='-weight'
 plot_title=''
