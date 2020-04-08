@@ -20,6 +20,7 @@
   - [x] run full simulation on toric codes and compare. Itpp perform much better. It can even decode many double errors. The difference I oberserved in algorithm is that (a) itpp use intergers, which I thing only save some time to make it faster than float calculation. (b) BoxPlus. This might be an optimization, see [ref](http://sc.enseeiht.fr/doc/Seminar_Matz.pdf)
 - Apr 7
   - [x] itpp result: no improvement using integer in convergence, but the program is at least 10 times faster. When using min sum (Dint2 =0), it get improvements and get faster again.
-  - [ ] writing my own function. min sum, normalization. offset.  - [x] my min sun is slightly worse than Dint2=0
+  - [ ] writing my own function. min sum, normalization. offset.
+  - [x] my min sun is slightly worse than Dint2=0
   - [x] iteration 10 show similar big improvement percentage. Still relatively lower than corresponding itpp
-
+  - [x] write decoder as a class in head file, instead of functions
