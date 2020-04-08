@@ -81,12 +81,12 @@ int bp_test(){
   //choose code
 
   //toric code
-  int size=5;
+  int size=25;
   string stabilizer_folder="data/toric/stabilizer";
   string filename_H = stabilizer_folder + "/toric_S_z_size_" + to_string(size) + ".mm";
-   GF2mat H =MM_to_GF2mat(filename_H);
+  //GF2mat H =MM_to_GF2mat(filename_H);
 
-   // GF2mat H = get_check(1,36); // repetition code
+   GF2mat H = get_check(2,35); // repetition code
 
 
   
@@ -95,7 +95,7 @@ int bp_test(){
   //  cout<<"parity check H = \n"<<H<<endl;
   GF2matPrint(H);
   bvec error = zeros_b(H.cols());
-  switch ( 1 ) {
+  switch ( 2 ) {
   case 0:
     error.set(0,1);break;
   case 1:
@@ -148,7 +148,7 @@ int bp_test(){
   //LLRout.zeros();
   cout<<"LLRin  = "<< LLRin<<endl;
   //  cout<<"LLRout = "<< LLRout<<endl;
-  int exit_iteration = 19;
+  int exit_iteration = 49;
   int iteration = bp_syndrome_llr(H,syndrome,LLRin, LLRout, exit_iteration);
   cout<<" iteration = "<<iteration <<endl;
   //  cout<<" LLRout = "<<LLRout<<endl;

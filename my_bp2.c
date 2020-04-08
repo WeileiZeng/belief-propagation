@@ -31,6 +31,8 @@ int main(int argc, char **argv){
   vector<future<int>> pool;
   vector<future<int>>::size_type pool_size=15; //max number of threads, 15 with decreasing size for best performace
   std::chrono::milliseconds span (100);
+  string filename_data="gnuplot/result/my-bp2-iteration10-cycle1000-min-sum.gnudat";
+
   //change parameter p, code size
   //char * filename_result=argv[3];//prefix for the file
   double p;
@@ -100,7 +102,6 @@ int main(int argc, char **argv){
     header += to_string(size) + ", ";
   }
   header += ("\n p, P_c converge rate, zero error vectors, weight one error, weight 2 error");
-  string filename_data="gnuplot/result/my-bp2-iteration0-cycle1000-Dint2-300.gnudat";
   mat2gnudata(data,filename_data,header);
   cout<<"save data to "<<filename_data.c_str()<<endl;
   return 0;
@@ -110,11 +111,12 @@ int main(int argc, char **argv){
 
 int decode( GF2mat G, GF2mat H, double p,  mat * data, int col_index, int row_index){
   //parameter setup
+  int decode_mode = 2;
   int cycles=1000;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
   int exit_at_iteration=50;//parameter for bp decoding set_exit_condition()
   //  int bound= (int) -4096 * log (p/(1-p));// -300; see note.pdf on how to choose bound
   int bound = 0;
-  int max_repetition = 0;//10 for best result. supposed to be zero in our set up, just for a check
+  int max_repetition = 10;//10 for best result. supposed to be zero in our set up, just for a check
   
   
   Real_Timer timer;
@@ -203,8 +205,8 @@ int decode( GF2mat G, GF2mat H, double p,  mat * data, int col_index, int row_in
     QLLRvec llr_input=C.get_llrcalc().to_qllr(s);
     //cout<<"llr_input="<<llr_input<<endl;
 
-    int ans0;
-    ans0=C.bp_decode(llr_input, llr_output);
+    //    int ans0;
+    //ans0=C.bp_decode(llr_input, llr_output);
     //replace the above line using my bp decoder
 
     bvec error=rec_bits;
@@ -219,15 +221,21 @@ int decode( GF2mat G, GF2mat H, double p,  mat * data, int col_index, int row_in
     //LLRout.zeros();
     //cout<<"LLRin  = "<< LLRin<<endl;
     //  cout<<"LLRout = "<< LLRout<<endl;
-    int exit_iteration = exit_at_iteration*10;
-    ans = bp_syndrome_llr(H,syndrome,LLRin, LLRout, exit_iteration);
+    int exit_iteration = exit_at_iteration*1;
+    ans = bp_syndrome_llr(H,syndrome,LLRin, LLRout, exit_iteration, decode_mode);
 
     //compare the result
-    if (ans0>0 && ans<0){
-      cout<<"Lose: ans0 = "<<ans0<<", ans = "<<ans<<endl;
-      draw_toric_x_error( error,"error");
-      draw_toric_x_error( error + (LLRout < bound),"eror + LLRout: ");
-      draw_toric_x_error( llr_output < bound,"llr_output:");
+    bool compare = false;
+    if (compare) {
+      int ans0;
+      ans0=C.bp_decode(llr_input, llr_output);
+      //replace the above line using my bp decoder
+      if (ans0>0 && ans<0){
+	cout<<"Lose: ans0 = "<<ans0<<", ans = "<<ans<<endl;
+	draw_toric_x_error( error,"error");
+	draw_toric_x_error( error + (LLRout < bound),"eror + LLRout: ");
+	draw_toric_x_error( llr_output < bound,"llr_output:");
+      }
     }
     
     //cout<<"iteration: ans="<<ans<<", ";
@@ -273,9 +281,13 @@ int decode( GF2mat G, GF2mat H, double p,  mat * data, int col_index, int row_in
 
       //repeat decoding
       //      C.get_llrcalc().to_qllr(s)
-      llr_input = C.get_llrcalc().to_qllr( C.get_llrcalc().to_double(llr_output));//not sure if needed, just want to resign llr_output to llr_input
-      ans = C.bp_decode(llr_input,llr_output);
-      bitsout = llr_output < bound;
+      LLRin = LLRout;
+      LLRout.zeros();
+      ans = bp_syndrome_llr(H,syndrome,LLRin, LLRout, exit_iteration, decode_mode);
+      bitsout = LLRout < bound;
+      //      llr_input = C.get_llrcalc().to_qllr( C.get_llrcalc().to_double(llr_output));//not sure if needed, just want to resign llr_output to llr_input
+      //ans = C.bp_decode(llr_input,llr_output);
+      //bitsout = llr_output < bound;
     }
 
     bitsout=bitsout+rec_bits+rec_bits0;//cancel input vector

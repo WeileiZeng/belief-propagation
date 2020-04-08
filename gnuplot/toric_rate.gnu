@@ -9,6 +9,8 @@ data_title='iteration0-cycle1000-Dint2-300'
 data_title='iteration0-cycle1000-Dint2-50'
 
 #data_title='my-bp2-iteration0-cycle200'
+data_title='my-bp2-iteration0-cycle1000-prod-check'
+data_title='my-bp2-iteration10-cycle1000-min-sum'
 
 plot_title='-weight'
 plot_title=''
