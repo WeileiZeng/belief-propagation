@@ -34,6 +34,8 @@ my_bp1.out:my_bp1.c $(files)
 	$(command)
 my_bp2.out:my_bp2.c $(files)
 	$(command)
+my_bp3.out:my_bp3.c $(files)
+	$(command)
 #bp_decoding3.out:bp_decoding3.c mm_read.c mm_read.h mmio.c mmio.h mm_write.c mm_write.h lib.cpp lib.h my_lib.h makefile
 bp_decoding3.out:bp_decoding3.c $(files)
 	$(command)

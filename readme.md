@@ -24,3 +24,4 @@
   - [x] my min sun is slightly worse than Dint2=0
   - [x] iteration 10 show similar big improvement percentage. Still relatively lower than corresponding itpp
   - [x] write decoder as a class in head file, instead of functions
+  - [x] layered schedule itself show no improvement. But layered scheduling plus enhanced feedback show improvement with a factor greater than 10. Run it overnight to see if there is a threshold

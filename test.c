@@ -267,8 +267,13 @@ void bp_decoder_class_test(){
 }
 
 int main(){
+  itpp::Real_Timer timer;
+  timer.tic();
   //thread_test();
   //bp_test();
   bp_decoder_class_test();
-
+  double t = timer.toc();
+  std::cout<<t<<endl;
+    
+  timer.toc_print();
 }
