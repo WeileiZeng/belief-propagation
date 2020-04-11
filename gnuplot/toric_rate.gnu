@@ -9,13 +9,20 @@ data_title='iteration0-cycle1000-Dint2-300'
 data_title='iteration0-cycle1000-Dint2-50'
 
 #data_title='my-bp2-iteration0-cycle200'
-data_title='my-bp2-iteration0-cycle1000-prod-check'
-data_title='my-bp2-iteration10-cycle1000-min-sum'
-data_title='my-bp3-iteration0-cycle1000-min-sum'
-data_title='my-bp3-feedback10-cycle5000-schedule'
-data_title='my-bp3-feedback5-cycle20000-schedule'
-data_title='my-bp3-feedback5-cycle0-10000-schedule'
-data_title='my-bp3-feedback5-num-data-100-schedule'
+#data_title='my-bp2-iteration0-cycle1000-prod-check'
+#data_title='my-bp2-iteration0-cycle1000'
+#data_title='my-bp2-iteration10-cycle1000-min-sum'
+#data_title='my-bp3-iteration0-cycle1000-min-sum'
+#data_title='my-bp3-feedback10-cycle5000-schedule'
+#data_title='my-bp3-feedback5-cycle20000-schedule'
+
+#data_title='my-bp3-feedback5-cycle0-10000-schedule'
+
+# show threshold around 0.008
+#data_title='my-bp3-feedback5-num-data-1000-schedule'
+data_title='my-bp3-feedback5-num-data-1000-schedule-p'
+
+data_title='my-bp3-feedback5-num-data-1000-flexible'
 
 
 
@@ -35,14 +42,15 @@ print "output: "."bp_plot/".data_title.plot_title.".pdf"
 
 set key left box
 set xlabel "Error probability: p"
-set ylabel "Converge rate: P_c"
+set ylabel "Non Converge rate: P_c"
 set logscale y
 set format y "10^{%L}"
 set logscale x
-#set format x "10^{%L}"
-set xrange [0.001:0.021]
+set format x "10^{%L}"
+#set xrange [0.01:0.021]
+set xrange [0.01:0.41]
 #set yrange [0.01:1]
-set title "converge rate of BP for toric code ".data_title.plot_title
+set title "BP for toric code ".data_title.plot_title
 
 set linetype cycle 5
 
@@ -50,14 +58,14 @@ set linetype cycle 5
 #size_set ="5 7 9 11 13"
 
 #plot rate
-f(x)=x*x*x*100
+#f(x)=x*x*x*100
 
 size_set="13 11 9 7 5"
 color_set="violet blue red yellow black green"
 
 # plot rate
 plot for [i=1:5] data_file using (column((i-1)*5+1)):(1-column((i-1)*5+2)) title 'size '.word(size_set,i) with linespoints ps 0.5 lc i,\
-[0.005:0.03] f(x) title '100x^3' dt '.'
+[0.02:0.09] x*x*x*1000 title 'x^3' dt '.'
 
 
 # plot weight of input error

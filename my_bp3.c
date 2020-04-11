@@ -32,14 +32,16 @@ int main(int argc, char **argv){
   vector<future<int>> pool;
   vector<future<int>>::size_type pool_size=15; //max number of threads, 15 with decreasing size for best performace
   std::chrono::milliseconds span (100);
-  std::chrono::milliseconds final_thread_time (10000);//10 secs
+  std::chrono::milliseconds final_thread_time (10000);//10 secs before prelimilary result print
   string filename_data="gnuplot/result/my-bp3-iteration0-cycle100-min-sum.gnudat";
   //  filename_data="gnuplot/result/my-bp3-feedback5-cycle0-10000-schedule.gnudat";
-  filename_data="gnuplot/result/my-bp3-feedback5-num-data-200-schedule.gnudat";
+  filename_data="gnuplot/result/my-bp3-feedback5-num-data-1000-schedule-p.gnudat";
+  filename_data="gnuplot/result/my-bp3-feedback5-num-data-1000-flexible.gnudat";
   int feedback=5;
   //  int cycle0=10000; //number of cycles for the first data points
-  double time_out=2000;//time out in seconds for each data points (p and size)
-  int num_data_points = 200;//data entry for each data points
+  int cycles = 1000000;//70 sec for 2,000,000
+  double time_out=500;//time out in seconds for each data points (p and size)
+  int num_data_points = 50;//data entry for each data points
     
   //change parameter p, code size
   //char * filename_result=argv[3];//prefix for the file
@@ -48,8 +50,8 @@ int main(int argc, char **argv){
   int sizes[]= {13,11,9,7,5};
   string stabilizer_folder="data/toric/stabilizer";
   //string error_folder="data/toric/bp_decoding4";
-  double ip_begin=-1.7;
-  double ip_end=-2.7;    
+  double ip_begin=-0.7;
+  double ip_end=-2.0;    
   int data_rows = (ip_begin-ip_end)/0.1;
   mat data(data_rows,5*5);   //return result in a mat, 5 columns for each size. format defines in header
   data.zeros();
@@ -67,7 +69,6 @@ int main(int argc, char **argv){
       row_index ++;
       //atof(argv[4]);
       p=pow(10,ip);
-      int cycles = 2000000;
       //      int cycles = std::pow(p,-3)/100/2*num_data_points;//around 10 data points for each point
       //      int cycles = cycle0*std::pow(10,3*(ip-ip_begin)/(ip_end-ip_begin));
       //p=ip/100000.0;//previous use 1000 division. Now use 100,000 division cause the thershold for toric codes seems to be around 0.1%.
@@ -150,7 +151,7 @@ int decode( GF2mat G, GF2mat H, double p,  mat * data, int col_index, int row_in
   bp_decoder.set_decode_mode_str("min sum");
   bp_decoder.set_exit_iteration(exit_at_iteration);
   bp_decoder.set_debug_mode(false);
-  bp_decoder.set_schedule_mode(1);
+  bp_decoder.set_schedule_mode(2);
   bp_decoder.print_info();
   
   Real_Timer timer;
