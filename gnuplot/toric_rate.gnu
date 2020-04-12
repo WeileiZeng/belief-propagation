@@ -38,7 +38,8 @@ data_file=data_folder.'/'.data_title.'.gnudat'
 set terminal pdf
 
 #set output "bp_plot/toric_rate.pdf"
-set output "bp_plot/".data_title.plot_title.".pdf"
+#set output "bp_plot/".data_title.plot_title.".pdf"
+set output "hpcc_bp_plot/".data_title.plot_title.".pdf"
 print "output: "."bp_plot/".data_title.plot_title.".pdf"
 
 set key left box
@@ -61,13 +62,14 @@ set linetype cycle 5
 #plot rate
 #f(x)=x*x*x*100
 
-size_set="13 11 9 7 5"
+# size_set="13 11 9 7 5"
 size_set="13 9 5"
 
 
 # plot rate
-plot for [i=1:5] data_file using (column((i-1)*5+1)):(1-column((i-1)*5+2)) title 'size '.word(size_set,i) with linespoints ps 0.5 lc i,\
-[0.02:0.09] x*x*x*1000 title 'x^3' dt '.'
+plot for [i=1:3] data_file using (column((i-1)*5+1)):(1-column((i-1)*5+2)) title 'size '.word(size_set,i) with linespoints ps 0.5 lc i
+#, \
+#[0.02:0.09] x*x*x*1000 title 'x^3' dt '.'
 
 
 # plot weight of input error
