@@ -28,12 +28,12 @@ int main(int argc, char **argv){
   //parser.get(filename_G,"filename_G");
   
   vector<future<int>> pool;
-  int cores=16;
+  int cores=32;
   vector<future<int>>::size_type pool_size = cores+2; //max number of threads, 15 with decreasing size for best performace
   std::chrono::milliseconds span (100);
   std::chrono::milliseconds final_thread_time (10000);//10 secs before prelimilary result print
   string filename_data;
-  filename_data="gnuplot/result/my-bp4-iter-9-fb-5-data-500-schedule-3.gnudat";
+  filename_data="gnuplot/result/my-bp4-iter-9-fb-5-data-500-schedule-3-hpcc.gnudat";
   int feedback=5;
   //  int cycles = 1000000;//70 sec for 2,000,000
   double time_out=200;//time out in seconds for each data points (p and size)
@@ -55,7 +55,8 @@ int main(int argc, char **argv){
   //split tasks into smaller chunks
   int chunk_num_data_points=10;//number of data points in each chunk
   int chunk_size=num_data_points/chunk_num_data_points;
-  double chunk_time_out = 20.0;//time_out/chunk_size;
+  //timeout should be 5 times longer in hpcc
+  double chunk_time_out = 100.0;//time_out/chunk_size;
   int chunk_cycles=chunk_num_data_points*1000;//1000 for prob 1/1000
 
   mat chunk_data(data_rows*chunk_size,5*5);

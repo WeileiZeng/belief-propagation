@@ -1,0 +1,1477 @@
+Sat Apr 11 23:17:40 PDT 2020
+folder: /rhome/wzeng002/working/github/belief-propagation
+hostname:
+i01
+--- BP_Decoder --- nvar = 338, ncheck =168, schedule_mode = 4, decode mode (1) standard, exit_iteration = 9
+my_bp: add new thread. pool_size=1, size = 13, p = 0.199526, row_index = 0, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=2, size = 13, p = 0.199526, row_index = 1, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=3, size = 13, p = 0.199526, row_index = 2, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=4, size = 13, p = 0.199526, row_index = 3, col_index = 0, chunk_cycles = 10000
+--- BP_Decoder --- nvar = 338, ncheck =168, schedule_mode = 4, decode mode (1) standard, exit_iteration = 9
+my_bp: add new thread. pool_size=1, size = 13, p = 0.199526, row_index = 0, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=2, size = 13, p = 0.199526, row_index = 1, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=5, size = 13, p = 0.199526, row_index = 4, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=6, size = 13, p = 0.199526, row_index = 5, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=3, size = 13, p = 0.199526, row_index = 2, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=7, size = 13, p = 0.199526, row_index = 6, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=4, size = 13, p = 0.199526, row_index = 3, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=8, size = 13, p = 0.199526, row_index = 7, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=5, size = 13, p = 0.199526, row_index = 4, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=6, size = 13, p = 0.199526, row_index = 5, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=9, size = 13, p = 0.199526, row_index = 8, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=7, size = 13, p = 0.199526, row_index = 6, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=10, size = 13, p = 0.199526, row_index = 9, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=11, size = 13, p = 0.199526, row_index = 10, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=8, size = 13, p = 0.199526, row_index = 7, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.199526, row_index = 11, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=9, size = 13, p = 0.199526, row_index = 8, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.199526, row_index = 12, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.199526, row_index = 13, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=10, size = 13, p = 0.199526, row_index = 9, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=11, size = 13, p = 0.199526, row_index = 10, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.199526, row_index = 11, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.199526, row_index = 12, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.199526, row_index = 13, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.199526, row_index = 14, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.199526, row_index = 14, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.199526, row_index = 15, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.199526, row_index = 15, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.199526, row_index = 16, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.199526, row_index = 16, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.199526, row_index = 17, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.199526, row_index = 17, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.199526, row_index = 18, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.199526, row_index = 18, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.199526, row_index = 19, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.199526, row_index = 19, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.199526, row_index = 20, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.199526, row_index = 21, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.199526, row_index = 20, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.199526, row_index = 21, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.199526, row_index = 22, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.199526, row_index = 23, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.199526, row_index = 24, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.199526, row_index = 25, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.199526, row_index = 22, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.199526, row_index = 23, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.199526, row_index = 24, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.199526, row_index = 25, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.199526, row_index = 26, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.199526, row_index = 27, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.199526, row_index = 28, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.199526, row_index = 29, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.199526, row_index = 30, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.199526, row_index = 31, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.199526, row_index = 32, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 33, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.199526, row_index = 26, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.199526, row_index = 27, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.199526, row_index = 28, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.199526, row_index = 29, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.199526, row_index = 30, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.199526, row_index = 31, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.199526, row_index = 32, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 33, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 73.8863 seconds
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 78.0722 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 34, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 34, col_index = 0, chunk_cycles = 10000
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 83.8161 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 35, col_index = 0, chunk_cycles = 10000
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 86.689 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 36, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.02, cycles = 50, counts_total = 50, counts_nonconverge = 49
+Elapsed time = 91.1474 seconds
+update cycles to 50
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 93.8193 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 35, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 36, col_index = 0, chunk_cycles = 10000
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 98.4902 seconds
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.02, cycles = 50, counts_total = 50, counts_nonconverge = 49
+Elapsed time = 98.8064 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.002 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.031 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.034 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 39, counts_nonconverge = 39
+Elapsed time = 100.09 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 100.042 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 100.017 seconds
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.056 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.095 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.0238095, cycles = 50, counts_total = 42, counts_nonconverge = 41
+Elapsed time = 100.098 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.29 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.307 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.334 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.343 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 100.263 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.367 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.437 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.0222222, cycles = 50, counts_total = 45, counts_nonconverge = 44
+Elapsed time = 100.529 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.0222222, cycles = 50, counts_total = 45, counts_nonconverge = 44
+Elapsed time = 100.458 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.541 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.55 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.504 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.588 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.502 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.613 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 100.534 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.0238095, cycles = 50, counts_total = 42, counts_nonconverge = 41
+Elapsed time = 100.576 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.578 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.643 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.592 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.694 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.653 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.757 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.767 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.768 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.0204082, cycles = 50, counts_total = 49, counts_nonconverge = 48
+Elapsed time = 100.822 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.866 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.809 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.909 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.854 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.93 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.897 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 47, counts_nonconverge = 47
+Elapsed time = 100.946 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.843 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.964 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 100.993 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.891 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 47, counts_nonconverge = 47
+Elapsed time = 101.017 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.017 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.02, cycles = 50, counts_total = 50, counts_nonconverge = 49
+Elapsed time = 101.016 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.921 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.973 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 101.055 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.05 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.994 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 101.119 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.0238095, cycles = 50, counts_total = 42, counts_nonconverge = 41
+Elapsed time = 101.155 seconds
+my_bp: add new thread. pool_size=27, size = 13, p = 0.199526, row_index = 37, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.199526, row_index = 38, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.199526, row_index = 39, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.199526, row_index = 40, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.199526, row_index = 41, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.199526, row_index = 42, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.199526, row_index = 43, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 44, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 101.17 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.0217391, cycles = 50, counts_total = 46, counts_nonconverge = 45
+Elapsed time = 101.089 seconds
+my_bp: add new thread. pool_size=28, size = 13, p = 0.199526, row_index = 37, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.199526, row_index = 38, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.199526, row_index = 39, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.199526, row_index = 40, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.199526, row_index = 41, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.199526, row_index = 42, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.199526, row_index = 43, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 101.228 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.247 seconds
+my_bp: add new thread. pool_size=11, size = 13, p = 0.199526, row_index = 44, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.199526, row_index = 45, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.199526, row_index = 46, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.199526, row_index = 47, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.199526, row_index = 48, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.199526, row_index = 49, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.158489, row_index = 50, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.158489, row_index = 51, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.158489, row_index = 52, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.158489, row_index = 53, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.158489, row_index = 54, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.158489, row_index = 55, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.158489, row_index = 56, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.158489, row_index = 57, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.158489, row_index = 58, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.158489, row_index = 59, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.158489, row_index = 60, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.158489, row_index = 61, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.158489, row_index = 62, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.158489, row_index = 63, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.158489, row_index = 64, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.158489, row_index = 65, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.158489, row_index = 66, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 67, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.199526, row_index = 45, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.199526, row_index = 46, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.199526, row_index = 47, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.199526, row_index = 48, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.199526, row_index = 49, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.158489, row_index = 50, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.158489, row_index = 51, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.158489, row_index = 52, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.158489, row_index = 53, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.158489, row_index = 54, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.158489, row_index = 55, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.158489, row_index = 56, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.158489, row_index = 57, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.158489, row_index = 58, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.158489, row_index = 59, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.158489, row_index = 60, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.158489, row_index = 61, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.158489, row_index = 62, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.158489, row_index = 63, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.158489, row_index = 64, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.158489, row_index = 65, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.158489, row_index = 66, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 67, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 58.1031 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 68, col_index = 0, chunk_cycles = 10000
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 67.0908 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 69, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 102.263 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.676 seconds
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 70, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 68, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0.0217391, cycles = 50, counts_total = 46, counts_nonconverge = 45
+Elapsed time = 103.469 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.804 seconds
+update cycles to 50
+my_bp: add new thread. pool_size=33, size = 13, p = 0.158489, row_index = 71, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 72, col_index = 0, chunk_cycles = 10000
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 93.9355 seconds
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 94.1767 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 47, counts_nonconverge = 47
+Elapsed time = 102.073 seconds
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.18 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 73, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.158489, row_index = 69, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 70, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.037 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.657 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 47, counts_nonconverge = 47
+Elapsed time = 100.84 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 48, counts_nonconverge = 48
+Elapsed time = 100.962 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.07 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.089 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.114 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.196 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.223 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.224 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.247 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.122 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.307 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.162 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.332 seconds
+timeout: 100
+N = 338 =  2 x timeout: 169, p = 100
+N = 338 =  2 x 1690.199526, p = , Converge rate =0, cycles = 0.15848950, Converge rate =, counts_total = 42, counts_nonconverge = 42
+0, cycles = Elapsed time = 50100.219 seconds, counts_total = 
+43, counts_nonconverge = 43
+Elapsed time = 100.214 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.483 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.445 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.368 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.549 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 101.612 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.49 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.495 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 47, counts_nonconverge = 47
+Elapsed time = 101.685 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.502 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.718 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.821 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.868 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.825 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.0444444, cycles = 50, counts_total = 45, counts_nonconverge = 43
+Elapsed time = 100.861 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.87 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.905 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.898 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.944 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.971 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.937 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.83 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.015 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.874 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 100.891 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.902 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.974 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 101.126 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.167 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 101.173 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 102.18 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 101.02 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.024 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 101.031 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 48, counts_nonconverge = 48
+Elapsed time = 101.218 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.199526, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.258 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.0238095, cycles = 50, counts_total = 42, counts_nonconverge = 41
+Elapsed time = 101.1 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 101.103 seconds
+my_bp: add new thread. pool_size=30, size = 13, p = 0.158489, row_index = 71, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.158489, row_index = 72, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.158489, row_index = 73, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.158489, row_index = 74, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 75, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 101.122 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 47, counts_nonconverge = 47
+Elapsed time = 101.148 seconds
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.0217391, cycles = 50, counts_total = 46, counts_nonconverge = 45
+Elapsed time = 101.217 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 101.375 seconds
+my_bp: add new thread. pool_size=32, size = 13, p = 0.158489, row_index = 74, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.158489, row_index = 75, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.158489, row_index = 76, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+my_bp: add new thread. pool_size=10, size = 13, p = 0.158489, row_index = 76, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=11, size = 13, p = 0.158489, row_index = 77, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.158489, row_index = 78, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.158489, row_index = 79, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.158489, row_index = 80, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.158489, row_index = 81, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.158489, row_index = 82, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.158489, row_index = 83, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.158489, row_index = 84, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.158489, row_index = 85, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.158489, row_index = 86, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.158489, row_index = 87, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.158489, row_index = 88, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.158489, row_index = 89, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.158489, row_index = 90, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.158489, row_index = 91, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.158489, row_index = 92, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.158489, row_index = 93, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.158489, row_index = 94, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.158489, row_index = 95, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.158489, row_index = 96, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.158489, row_index = 97, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.158489, row_index = 98, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.158489, row_index = 99, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 100, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=10, size = 13, p = 0.158489, row_index = 77, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=11, size = 13, p = 0.158489, row_index = 78, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.158489, row_index = 79, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.158489, row_index = 80, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.158489, row_index = 81, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.158489, row_index = 82, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.158489, row_index = 83, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.158489, row_index = 84, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.158489, row_index = 85, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.158489, row_index = 86, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.158489, row_index = 87, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.158489, row_index = 88, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.158489, row_index = 89, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.158489, row_index = 90, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.158489, row_index = 91, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.158489, row_index = 92, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.158489, row_index = 93, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.158489, row_index = 94, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.158489, row_index = 95, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.158489, row_index = 96, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.158489, row_index = 97, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.158489, row_index = 98, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.158489, row_index = 99, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.125893, row_index = 100, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 101, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 101, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 82.714 seconds
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 80.897 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 102, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 103, col_index = 0, chunk_cycles = 10000
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.02, cycles = 50, counts_total = 50, counts_nonconverge = 49
+Elapsed time = 58.9072 seconds
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 102, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 70.7301 seconds
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 104, col_index = 0, chunk_cycles = 10000
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 98.1148 seconds
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 79.7976 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 103, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 105, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.0227273, cycles = 50, counts_total = 44, counts_nonconverge = 43
+Elapsed time = 101.953 seconds
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 104, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.424 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 47, counts_nonconverge = 47
+Elapsed time = 101.582 seconds
+update cycles to 50
+update cycles to 50
+my_bp: add new thread. pool_size=33, size = 13, p = 0.125893, row_index = 106, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 107, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.5 seconds
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 97.8771 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 102.061 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.0227273, cycles = 50, counts_total = 44, counts_nonconverge = 43
+Elapsed time = 102.246 seconds
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 98.678 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.691 seconds
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 47, counts_nonconverge = 47
+Elapsed time = 100.106 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.017 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 47, counts_nonconverge = 47
+Elapsed time = 100.156 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.172 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 100.206 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.092 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.322 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.0238095, cycles = 50, counts_total = 42, counts_nonconverge = 41
+Elapsed time = 100.173 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.416 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.232 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.502 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.251 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.449 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.352 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 48, counts_nonconverge = 48
+Elapsed time = 100.379 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.597 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.614 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.467 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.402 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.538 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.775 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.827 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.829 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 101.748 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.888 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.025, cycles = 50, counts_total = 40, counts_nonconverge = 39
+Elapsed time = 100.937 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.0222222, cycles = 50, counts_total = 45, counts_nonconverge = 44
+Elapsed time = 100.737 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.76 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.793 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.007 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.01 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.784 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.086 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0444444, cycles = 50, counts_total = 45, counts_nonconverge = 43
+Elapsed time = 100.929 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.97 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.984 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.0227273, cycles = 50, counts_total = 44, counts_nonconverge = 43
+Elapsed time = 101.235 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.246 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 101.273 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0.0227273, cycles = 50, counts_total = 44, counts_nonconverge = 43
+Elapsed time = 101.279 seconds
+my_bp: add new thread. pool_size=31, size = 13, p = 0.125893, row_index = 105, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.125893, row_index = 106, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.125893, row_index = 107, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 108, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.289 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.086 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 49, counts_nonconverge = 49
+Elapsed time = 101.093 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.102 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.125 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 101.145 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.147 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 101.146 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.362 seconds
+my_bp: add new thread. pool_size=32, size = 13, p = 0.125893, row_index = 108, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.125893, row_index = 109, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 110, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 101.433 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 101.23 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.158489, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.402 seconds
+my_bp: add new thread. pool_size=9, size = 13, p = 0.125893, row_index = 109, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=10, size = 13, p = 0.125893, row_index = 110, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=11, size = 13, p = 0.125893, row_index = 111, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.125893, row_index = 112, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.125893, row_index = 113, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.125893, row_index = 114, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.125893, row_index = 115, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.125893, row_index = 116, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.125893, row_index = 117, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.125893, row_index = 118, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.125893, row_index = 119, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.125893, row_index = 120, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.125893, row_index = 121, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.125893, row_index = 122, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.125893, row_index = 123, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.125893, row_index = 124, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.125893, row_index = 125, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.125893, row_index = 126, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.125893, row_index = 127, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.125893, row_index = 128, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.125893, row_index = 129, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.125893, row_index = 130, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.125893, row_index = 131, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.125893, row_index = 132, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.125893, row_index = 133, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 134, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=11, size = 13, p = 0.125893, row_index = 111, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.125893, row_index = 112, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.125893, row_index = 113, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.125893, row_index = 114, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.125893, row_index = 115, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.125893, row_index = 116, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.125893, row_index = 117, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.125893, row_index = 118, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.125893, row_index = 119, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.125893, row_index = 120, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.125893, row_index = 121, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.125893, row_index = 122, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.125893, row_index = 123, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.125893, row_index = 124, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.125893, row_index = 125, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.125893, row_index = 126, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.125893, row_index = 127, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.125893, row_index = 128, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.125893, row_index = 129, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.125893, row_index = 130, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.125893, row_index = 131, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.125893, row_index = 132, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.125893, row_index = 133, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 134, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.314 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 135, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 135, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.02, cycles = 50, counts_total = 50, counts_nonconverge = 49
+Elapsed time = 68.0044 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 136, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.723 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 101.118 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 137, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 138, col_index = 0, chunk_cycles = 10000
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 54.9478 seconds
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 139, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.278 seconds
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 136, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.987 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.647 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 140, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 137, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 102.808 seconds
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 50, counts_nonconverge = 50
+Elapsed time = 89.3232 seconds
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.02, cycles = 50, counts_total = 50, counts_nonconverge = 49
+Elapsed time = 89.3042 seconds
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.02, cycles = 50, counts_total = 50, counts_nonconverge = 49
+Elapsed time = 91.226 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 138, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.58 seconds
+my_bp: add new thread. pool_size=33, size = 13, p = 0.125893, row_index = 139, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 140, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 141, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 102.578 seconds
+update cycles to 50
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 142, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.471 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0212766, cycles = 50, counts_total = 47, counts_nonconverge = 46
+Elapsed time = 100.421 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.621 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.924 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.154 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.198 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.073 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.249 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.212 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0222222, cycles = 50, counts_total = 45, counts_nonconverge = 44
+Elapsed time = 100.117 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.283 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.281 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.309 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.309 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.206 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.255 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.321 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.329 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.363 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.584 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 40, counts_nonconverge = 40
+Elapsed time = 100.423 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 100.43 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0227273, cycles = 50, counts_total = 44, counts_nonconverge = 43
+Elapsed time = 100.572 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 100.64 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0232558, cycles = 50, counts_total = 43, counts_nonconverge = 42
+Elapsed time = 100.714 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.621 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 100.781 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.792 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0227273, cycles = 50, counts_total = 44, counts_nonconverge = 43
+Elapsed time = 100.794 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0227273, cycles = 50, counts_total = 44, counts_nonconverge = 43
+Elapsed time = 100.828 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0238095, cycles = 50, counts_total = 42, counts_nonconverge = 41
+Elapsed time = 100.839 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.868 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.755 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.773 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0454545, cycles = 50, counts_total = 44, counts_nonconverge = 42
+Elapsed time = 100.96 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 101.931 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.995 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 46, counts_nonconverge = 46
+Elapsed time = 100.841 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0232558, cycles = 50, counts_total = 43, counts_nonconverge = 42
+Elapsed time = 100.856 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 42, counts_nonconverge = 42
+Elapsed time = 101.041 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.882 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 101.106 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0227273, cycles = 50, counts_total = 44, counts_nonconverge = 43
+Elapsed time = 101.001 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.005 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0212766, cycles = 50, counts_total = 47, counts_nonconverge = 46
+Elapsed time = 101.038 seconds
+my_bp: add new thread. pool_size=32, size = 13, p = 0.125893, row_index = 141, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.125893, row_index = 142, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 143, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0222222, cycles = 50, counts_total = 45, counts_nonconverge = 44
+Elapsed time = 101.197 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0232558, cycles = 50, counts_total = 43, counts_nonconverge = 42
+Elapsed time = 101.091 seconds
+my_bp: add new thread. pool_size=33, size = 13, p = 0.125893, row_index = 143, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.125893, row_index = 144, col_index = 0, chunk_cycles = 10000
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 41, counts_nonconverge = 41
+Elapsed time = 101.117 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0.0454545, cycles = 50, counts_total = 44, counts_nonconverge = 42
+Elapsed time = 101.149 seconds
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.149 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 101.333 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.332 seconds
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 44, counts_nonconverge = 44
+Elapsed time = 101.174 seconds
+my_bp: add new thread. pool_size=10, size = 13, p = 0.125893, row_index = 144, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=11, size = 13, p = 0.125893, row_index = 145, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.125893, row_index = 146, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.125893, row_index = 147, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.125893, row_index = 148, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.125893, row_index = 149, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.1, row_index = 150, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.1, row_index = 151, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.1, row_index = 152, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.1, row_index = 153, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.1, row_index = 154, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.1, row_index = 155, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.1, row_index = 156, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.1, row_index = 157, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.1, row_index = 158, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.1, row_index = 159, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.1, row_index = 160, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.1, row_index = 161, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.1, row_index = 162, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.1, row_index = 163, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.1, row_index = 164, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.1, row_index = 165, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.1, row_index = 166, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.1, row_index = 167, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.1, row_index = 168, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=11, size = 13, p = 0.125893, row_index = 145, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=12, size = 13, p = 0.125893, row_index = 146, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=13, size = 13, p = 0.125893, row_index = 147, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=14, size = 13, p = 0.125893, row_index = 148, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=15, size = 13, p = 0.125893, row_index = 149, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=16, size = 13, p = 0.1, row_index = 150, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=17, size = 13, p = 0.1, row_index = 151, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=18, size = 13, p = 0.1, row_index = 152, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=19, size = 13, p = 0.1, row_index = 153, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=20, size = 13, p = 0.1, row_index = 154, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=21, size = 13, p = 0.1, row_index = 155, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=22, size = 13, p = 0.1, row_index = 156, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=23, size = 13, p = 0.1, row_index = 157, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=24, size = 13, p = 0.1, row_index = 158, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=25, size = 13, p = 0.1, row_index = 159, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=26, size = 13, p = 0.1, row_index = 160, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=27, size = 13, p = 0.1, row_index = 161, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=28, size = 13, p = 0.1, row_index = 162, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=29, size = 13, p = 0.1, row_index = 163, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=30, size = 13, p = 0.1, row_index = 164, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=31, size = 13, p = 0.1, row_index = 165, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=32, size = 13, p = 0.1, row_index = 166, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=33, size = 13, p = 0.1, row_index = 167, col_index = 0, chunk_cycles = 10000
+my_bp: add new thread. pool_size=34, size = 13, p = 0.1, row_index = 168, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 43, counts_nonconverge = 43
+Elapsed time = 100.28 seconds
+update cycles to 50
+timeout: 100
+N = 338 =  2 x 169, p = 0.125893, Converge rate =0, cycles = 50, counts_total = 45, counts_nonconverge = 45
+Elapsed time = 100.838 seconds
+my_bp: add new thread. pool_size=34, size = 13, p = 0.1, row_index = 169, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+my_bp: add new thread. pool_size=34, size = 13, p = 0.1, row_index = 169, col_index = 0, chunk_cycles = 10000
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
+update cycles to 50
