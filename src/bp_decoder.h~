@@ -1,0 +1,11 @@
+//this is the class for bp_decoder
+
+#include <string>
+//#include <itbase.h>
+
+class BP_Decoder{
+ public:
+  int decode_mode;
+  std::string decode_mode_str;
+  //  itpp::GF2mat H;//parity check matrix
+};

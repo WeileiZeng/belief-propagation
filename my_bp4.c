@@ -28,27 +28,39 @@ int main(int argc, char **argv){
   //parser.get(filename_G,"filename_G");
   
   vector<future<int>> pool;
-  vector<future<int>>::size_type pool_size=15; //max number of threads, 15 with decreasing size for best performace
+  int cores=16;
+  vector<future<int>>::size_type pool_size = cores+2; //max number of threads, 15 with decreasing size for best performace
   std::chrono::milliseconds span (100);
   std::chrono::milliseconds final_thread_time (10000);//10 secs before prelimilary result print
   string filename_data;
-  filename_data="gnuplot/result/my-bp4-feedback5-num-data-1000-flexible.gnudat";
+  filename_data="gnuplot/result/my-bp4-iter-9-fb-5-data-500-schedule-3.gnudat";
   int feedback=5;
-  int cycles = 1000000;//70 sec for 2,000,000
-  double time_out=50;//time out in seconds for each data points (p and size)
-  int num_data_points = 50;//data entry for each data points
+  //  int cycles = 1000000;//70 sec for 2,000,000
+  double time_out=200;//time out in seconds for each data points (p and size)
+  int num_data_points = 500;//data entry for each data points
     
   //change parameter p, code size
   double p;
   //parser.get(p,"p");
-  int sizes[]= {13,11,9,7,5};
+  //  int sizes[]= {13,11,9,7,5};
+  int sizes[]= {13,9,5};
+  int size_of_sizes = sizeof(sizes)/sizeof(*sizes);
   string stabilizer_folder="data/toric/stabilizer";
   double ip_begin=-0.7;
-  double ip_end=-2.0;    
+  double ip_end=-1.8;    
   int data_rows = (ip_begin-ip_end)/0.1;
-  mat data(data_rows,5*5);   //return result in a mat, 5 columns for each size. format defines in header
+  mat data(data_rows,5 * size_of_sizes );   //return result in a mat, 5 columns for each size. format defines in header  
   data.zeros();
 
+  //split tasks into smaller chunks
+  int chunk_num_data_points=10;//number of data points in each chunk
+  int chunk_size=num_data_points/chunk_num_data_points;
+  double chunk_time_out = 20.0;//time_out/chunk_size;
+  int chunk_cycles=chunk_num_data_points*1000;//1000 for prob 1/1000
+
+  mat chunk_data(data_rows*chunk_size,5*5);
+  chunk_data.zeros();
+  
   int col_index=-5;
   for ( int size : sizes){
     //    cout<<"size = "<<size<<endl;
@@ -64,45 +76,51 @@ int main(int argc, char **argv){
     //bp_decoder.set_decode_mode_str("min sum");
     bp_decoder.set_exit_iteration(9);
     bp_decoder.set_debug_mode(false);
-    bp_decoder.set_schedule_mode(2);
+    bp_decoder.set_schedule_mode(4);
     bp_decoder.print_info();
       
     int row_index=-1;
     for ( double ip=ip_begin;ip > ip_end;ip-=0.1){
       //cout<<"ip = "<<ip<<endl;
-      row_index ++;
+      //      row_index ++;
       //atof(argv[4]);
       p=pow(10,ip);
 
-      //manage thread within limit of pool size
-      while ( pool.size() >= pool_size ){
-	//wait until some of them finish
-	//break;
-	 for(vector <future<int>> :: iterator it = pool.begin(); it != pool.end(); ++it){
-	  //printf("%d", *it);
-	   if ( it->wait_for(span) == future_status::ready){
-	     //	    cout<<"."<<endl;
-	    pool.erase(it);	    
-	    cout<<"remove thread. pool_size="<<pool.size()<<endl;
-	    it--;
-	    //break;
+      for ( int ic=0; ic<chunk_size; ic++){
+	row_index ++;
+	//manage thread within limit of pool size
+	while ( pool.size() >= pool_size ){
+	  //wait until some of them finish
+	  //break;
+	  for(vector <future<int>> :: iterator it = pool.begin(); it != pool.end(); ++it){
+	    //printf("%d", *it);
+	    if ( it->wait_for(span) == future_status::ready){
+	      //	    cout<<"."<<endl;
+	      pool.erase(it);	    
+	      //cout<<"remove thread. pool_size="<<pool.size()<<endl;
+	      it--;
+	      //break;
+	    }
 	  }
-	 }
-      }
+	}
     
-      // future<int> fut = async(launch::async, decode,G, H, p, filename_result_p);
-      //pool.push_back(move(fut));
-      pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & data,col_index, row_index, cycles, feedback, time_out, num_data_points) );
+	// future<int> fut = async(launch::async, decode,G, H, p, filename_result_p);
+	//pool.push_back(move(fut));
+	//pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & data,col_index, row_index, cycles, feedback, time_out, num_data_points) );
+	pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & chunk_data,col_index, row_index, chunk_cycles, feedback, chunk_time_out, chunk_num_data_points) );
       
       cout<<"my_bp: add new thread. pool_size="<<pool.size()
 	  <<", size = "<<size
 	  <<", p = "<<p
 	  <<", row_index = "<<row_index
 	  <<", col_index = "<<col_index
-	  <<", cycles = "<<cycles
+	  <<", chunk_cycles = "<<chunk_cycles
 	  <<endl;
+      }
     }
   }
+  //finish adding all the threads and most of them are done
+  
   //wait a bit for last threads
   for(vector <future<int>> :: iterator it = pool.begin(); it != pool.end(); ++it){
     it->wait_for(final_thread_time);
@@ -114,12 +132,27 @@ int main(int argc, char **argv){
     header += to_string(size) + ", ";
   }
   header += ("\n p, P_c converge rate, zero error vectors, weight one error, weight 2 error");
-  mat2gnudata(data,filename_data,header);
-  cout<<"save prelimilary data to "<<filename_data.c_str()<<endl;
+  //  mat2gnudata(data,filename_data,header);
+  //cout<<"save prelimilary data to "<<filename_data.c_str()<<endl;
 
   //wait all process to finish
   for(vector <future<int>> :: iterator it = pool.begin(); it != pool.end(); ++it){
     it->get();
+  }
+
+  //process chunk_data to data
+  int temp_index;
+  double value;
+  for ( int i =0; i<data.rows();i++){
+    for ( int j = 0; j< data.cols();j++){
+      value=0;
+      for ( int k =0;k<chunk_size; k++){
+	temp_index = i* chunk_size+k;
+	value += chunk_data(temp_index,j);
+      }
+      value = value/chunk_size;
+      data.set(i,j,value);
+    }
   }
 
   //print final result
@@ -222,11 +255,17 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
       counts_nonconverge++;
       //time control
       if (timer.toc()>time_out){
-	break;
-      }else if (counts_nonconverge > num_data_points){
+	std::cout<<"timeout: "<<time_out<<std::endl;
 	break;
       }
-      
+      else if (counts_nonconverge == num_data_points/2){
+	//change number of cycles
+	cycles =min(cycles, i *2);
+	cycles=max(cycles, 50);
+	std::cout<<"update cycles to "<<cycles<<std::endl;
+	//std::cout<<i<<","<<counts_nonconverge<<", "
+	//	 << num_data_points<<std::endl;
+      }
     }
   }
   //cout<<"counts_converge="<<counts_converge<<endl;

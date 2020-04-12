@@ -22,8 +22,9 @@ data_title='iteration0-cycle1000-Dint2-50'
 #data_title='my-bp3-feedback5-num-data-1000-schedule'
 data_title='my-bp3-feedback5-num-data-1000-schedule-p'
 
-data_title='my-bp4-feedback5-num-data-1000-flexible'
-
+data_title='my-bp4-iter-9-fb-0-data-50-schedule-3'
+data_title='my-bp4-iter-9-fb-5-data-50-schedule-3'
+data_title='my-bp4-iter-9-fb-5-data-500-schedule-3'
 
 
 plot_title='-weight'
@@ -61,7 +62,8 @@ set linetype cycle 5
 #f(x)=x*x*x*100
 
 size_set="13 11 9 7 5"
-color_set="violet blue red yellow black green"
+size_set="13 9 5"
+
 
 # plot rate
 plot for [i=1:5] data_file using (column((i-1)*5+1)):(1-column((i-1)*5+2)) title 'size '.word(size_set,i) with linespoints ps 0.5 lc i,\

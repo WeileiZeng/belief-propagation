@@ -1,5 +1,5 @@
 #CXX=g++ -g -Wall  #for debug mode
-CXX=g++ -O3 -Wall
+CXX=g++ -O3 -Wall -std=c++11 -pthread
 ### -O2 -O5 -Os
 #g++ `pkg-config --cflags itpp` -o hello.out hello.cpp `pkg-config --libs itpp`
 
@@ -16,7 +16,7 @@ INC_DIR=~/working/weilei_lib
 files=$(INC_DIR)/mm_read.c $(INC_DIR)/mm_read.h $(INC_DIR)/mmio.c $(INC_DIR)/mmio.h $(INC_DIR)/mm_write.c $(INC_DIR)/mm_write.h $(INC_DIR)/lib.cpp $(INC_DIR)/lib.h $(INC_DIR)/dist.c $(INC_DIR)/dist.h $(INC_DIR)/concatenation_lib.c $(INC_DIR)/concatenation_lib.h $(INC_DIR)/bp.c $(INC_DIR)/bp.h $(INC_DIR)/bp_decoder.h $(INC_DIR)/my_lib.h makefile
 #command=$(CXX) -I../../weilei_lib $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(word 14, $^) $(END)
 
-command=$(CXX) -std=c++11 -pthread -I $(INC_DIR) $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(word 14, $^) $(word 15, $^) $(END) ; echo finish making
+command=$(CXX) -I $(INC_DIR) $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(word 14, $^) $(word 15, $^) $(END) ; echo finish making
 #the last one is my_lib.h
 
 

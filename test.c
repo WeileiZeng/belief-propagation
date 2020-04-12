@@ -9,6 +9,7 @@
 #include "my_lib.h"
 #include <math.h>
 #include "bp_decoder.h"
+#include<algorithm> // for std::for_each
 using namespace std;
 using namespace itpp;
 
@@ -266,14 +267,47 @@ void bp_decoder_class_test(){
   return;
 }
 
+void switch_test(int a){
+  switch (a) {
+  case 1:
+  case 2:
+    std::cout<<"1 2"<<std::endl;
+    break;
+  case 3:
+  case 4:
+    std::cout<<"3 4 "<<std::endl;
+    break;
+  default:
+    std::cout<<"none"<<std::endl;
+    break;
+  }
+  return;
+}
+
 int main(){
   itpp::Real_Timer timer;
   timer.tic();
   //thread_test();
   //bp_test();
-  bp_decoder_class_test();
-  double t = timer.toc();
-  std::cout<<t<<endl;
+  //bp_decoder_class_test();
+
+  switch_test(3);
+    switch_test(4);
+    switch_test(5);
+
+    std::vector<std::string> foo;
+    std::for_each(
+		  std::execution::par_unseq,
+		  foo.begin(),
+		  foo.end(),
+		  [](auto&& item)
+		  {
+		    //do stuff with item
+		    std::cout<<"hello"<<std::endl;
+		  });
+    
+  //  double t = timer.toc();
+  //  std::cout<<t<<endl;
     
   timer.toc_print();
 }
