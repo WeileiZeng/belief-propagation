@@ -1,12 +1,12 @@
-#!/usr/bin/gnuplot
+# ! /usr/bin/gnuplot
 
 # parameter
 data_folder='result'
 
 #data_title='data-cycle100'
 #data_title='iteration10-cycle1000'
-data_title='iteration0-cycle1000-Dint2-300'
-data_title='iteration0-cycle1000-Dint2-50'
+#data_title='iteration0-cycle1000-Dint2-300'
+#data_title='iteration0-cycle1000-Dint2-50'
 
 #data_title='my-bp2-iteration0-cycle200'
 #data_title='my-bp2-iteration0-cycle1000-prod-check'
@@ -25,6 +25,9 @@ data_title='my-bp3-feedback5-num-data-1000-schedule-p'
 data_title='my-bp4-iter-9-fb-0-data-50-schedule-3'
 data_title='my-bp4-iter-9-fb-5-data-50-schedule-3'
 data_title='my-bp4-iter-9-fb-5-data-500-schedule-3'
+data_title='my-bp4-iter-9-fb-5-data-100-schedule-3-hpcc'
+data_title='bp4-iter-9-fb-5-data-1000-sch-3-min-sum'
+data_title='bp4-test-run'
 
 
 plot_title='-weight'
@@ -87,3 +90,6 @@ plot for [i=1:3] data_file using (column((i-1)*5+1)):(1-column((i-1)*5+2)) title
 
 
 #pause -1 "hit any key to exit"
+
+
+# system "./build_index.sh"

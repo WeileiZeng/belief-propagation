@@ -24,21 +24,23 @@ int main(int argc, char **argv){
   Parser parser;
   parser.init(argc,argv);
   //p.set_silentmode(true);
-  string filename_G, filename_H, filename_result;
+  string filename_G, filename_H;
   //parser.get(filename_G,"filename_G");
-  
+  Real_Timer timer;   double remained_time; //remained time for each size
   vector<future<int>> pool;
-  int cores=32;
+  int cores=32; parser.get(cores, "cores");
   vector<future<int>>::size_type pool_size = cores+2; //max number of threads, 15 with decreasing size for best performace
   std::chrono::milliseconds span (100);
   std::chrono::milliseconds final_thread_time (10000);//10 secs before prelimilary result print
   string filename_data;
-  filename_data="gnuplot/result/my-bp4-iter-9-fb-5-data-500-schedule-3-hpcc.gnudat";
-  int feedback=5;
+  filename_data="gnuplot/result/my-bp4-iter-9-fb-25-data-100-schedule-3-hpcc.gnudat"; 
+  parser.get(filename_data,"filename_data");
+  
+  int feedback=25; parser.get(feedback,"feedback");
   //  int cycles = 1000000;//70 sec for 2,000,000
-  double time_out=200;//time out in seconds for each data points (p and size)
-  int num_data_points = 500;//data entry for each data points
-    
+  //  double time_out=200;//time out in seconds for each data points (p and size)
+  int num_data_points = 100;//data entry for each data points
+  parser.get(num_data_points, "num_data_points");
   //change parameter p, code size
   double p;
   //parser.get(p,"p");
@@ -52,16 +54,23 @@ int main(int argc, char **argv){
   mat data(data_rows,5 * size_of_sizes );   //return result in a mat, 5 columns for each size. format defines in header  
   data.zeros();
 
+  int exit_iteration=9; parser.get(exit_iteration,"exit_iteration");
+  int schedule_mode=4; parser.get(schedule_mode, "schedule_mode");
+
   //split tasks into smaller chunks
   int chunk_num_data_points=10;//number of data points in each chunk
-  int chunk_size=num_data_points/chunk_num_data_points;
+  int chunk_size=num_data_points/chunk_num_data_points; //number of chunks for each p and size
+  int chunk_num_for_each_size = chunk_size*((ip_begin-ip_end)/0.1);
+
   //timeout should be 5 times longer in hpcc
   double chunk_time_out = 100.0;//time_out/chunk_size;
+  parser.get(chunk_time_out,"chunk_time_out");
   int chunk_cycles=chunk_num_data_points*1000;//1000 for prob 1/1000
 
   mat chunk_data(data_rows*chunk_size,5*5);
   chunk_data.zeros();
-  
+
+
   int col_index=-5;
   for ( int size : sizes){
     //    cout<<"size = "<<size<<endl;
@@ -74,13 +83,14 @@ int main(int argc, char **argv){
     //set up for BP_Decoder
     BP_Decoder bp_decoder;
     bp_decoder.init(H);
-    //bp_decoder.set_decode_mode_str("min sum");
-    bp_decoder.set_exit_iteration(9);
+    bp_decoder.set_decode_mode_str("min sum");    
+    bp_decoder.set_exit_iteration(exit_iteration);
     bp_decoder.set_debug_mode(false);
-    bp_decoder.set_schedule_mode(4);
+    bp_decoder.set_schedule_mode(schedule_mode);
     bp_decoder.print_info();
       
     int row_index=-1;
+    timer.tic();
     for ( double ip=ip_begin;ip > ip_end;ip-=0.1){
       //cout<<"ip = "<<ip<<endl;
       //      row_index ++;
@@ -109,14 +119,17 @@ int main(int argc, char **argv){
 	//pool.push_back(move(fut));
 	//pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & data,col_index, row_index, cycles, feedback, time_out, num_data_points) );
 	pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & chunk_data,col_index, row_index, chunk_cycles, feedback, chunk_time_out, chunk_num_data_points) );
-      
+
+	remained_time = timer.toc()/(row_index+1)*chunk_num_for_each_size;
       cout<<"my_bp: add new thread. pool_size="<<pool.size()
 	  <<", size = "<<size
 	  <<", p = "<<p
-	  <<", row_index = "<<row_index
+	  <<", row_index = "<<row_index<<"/"<<chunk_num_for_each_size
+	  <<", remained time for this p is "<< remained_time <<" sec"
 	  <<", col_index = "<<col_index
 	  <<", chunk_cycles = "<<chunk_cycles
 	  <<endl;
+
       }
     }
   }
@@ -128,11 +141,11 @@ int main(int argc, char **argv){
   }
 
   //print prelimilary result  
-  string header="#header\nsizes: ";
+  string header="# header\n# sizes: ";
   for (int size : sizes){
     header += to_string(size) + ", ";
   }
-  header += ("\n p, P_c converge rate, zero error vectors, weight one error, weight 2 error");
+  header += ("\n# p, P_c converge rate, counts_total, counts_nonconverge, timer.toc()");
   //  mat2gnudata(data,filename_data,header);
   //cout<<"save prelimilary data to "<<filename_data.c_str()<<endl;
 
@@ -174,17 +187,17 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
   int max_repetition = feedback;//10 for best result. supposed to be zero in our set up, just for a check
   
   Real_Timer timer;
-  int N = H.cols();
+  int nvar = H.cols();
   //int N = C.get_nvar(); // number of bits per codeword; N=2 x n x n is the size of the toric code.
   
-  bvec bitsin = zeros_b(N);//original zero vector
+  bvec bitsin = zeros_b(nvar);//original zero vector
  
   RNG_randomize();
   timer.tic(); 
 
   BSC bsc(p); // initialize BSC, error channel with probability pp
   int ans=0; //the value return by bp_decoding(), which is the number of iterations and with a minus sign if it doesn't converge
-  vec LLRin(H.cols());
+  vec LLRin(nvar);
   double LLR=log( (1-p)/p);
 
   int counts_converge=0;
@@ -193,23 +206,8 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
     //bvec rec_bits = bitsin;   // input vector with manually-input errors, for test
 
     bvec rec_bits0 = bsc(bitsin);    // input vector with errors from bsc chanel
-    //bvec rec_bits = find_error(rec_bits0,H);//switch to en error with same syndrome
     bvec rec_bits=rec_bits0;
-    
-    //    bvec rec_bits( error_transform(rec_bits0,MM_to_GF2mat(filename_G)) ); //for test
-
-    //    vec s(N), s0(N); // input LLR version
     QLLRvec llr_output;
-    //    for(int i1=0;i1<N;i1++)      s(i1)=s0(i1)=(rec_bits(i1)==1)?-log(1.0/p-1.0):log(1.0/p-1.0);
-    
-    
-    //    QLLRvec llr_input=C.get_llrcalc().to_qllr(s);
-    //cout<<"llr_input="<<llr_input<<endl;
-    
-    //    int ans0;
-    //ans0=C.bp_decode(llr_input, llr_output);
-    //replace the above line using my bp decoder
-
     bvec error=rec_bits;
     bvec syndrome = (H*error);
     //cout<<"syndrome = "<<syndrome<<endl;
@@ -217,13 +215,7 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
     LLRin = LLRin*LLR;
 
     vec LLRout(LLRin);//default, zero syndrome give zero error
-    //LLRout.zeros();
-    //cout<<"LLRin  = "<< LLRin<<endl;
-    //  cout<<"LLRout = "<< LLRout<<endl;
-    //    int exit_iteration = exit_at_iteration*1;
-    //    ans = bp_syndrome_llr(H,syndrome,LLRin, LLRout, exit_iteration, decode_mode);
     ans = bp_decoder.decode(syndrome,LLRin, LLRout);
-
 
     bvec bitsout = llr_output < bound; //30;//0;//output
 
@@ -237,7 +229,8 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
 
       LLRin = LLRout;
       LLRout.zeros();
-      ans = bp_decoder.bp_syndrome_llr(syndrome,LLRin, LLRout);
+      ans = bp_decoder.decode(syndrome,LLRin, LLRout);
+      //      ans = bp_decoder.bp_syndrome_llr(syndrome,LLRin, LLRout);
       //      ans = bp_syndrome_llr(H,syndrome,LLRin, LLRout, exit_iteration, decode_mode);
       bitsout = LLRout < bound;
 
@@ -274,7 +267,7 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
   //this statistical method create an overall bias
   int counts_total = counts_converge+counts_nonconverge;
   double rate_converge=counts_converge*1.0/counts_total;
-  cout<<"N = "<<N<<" =  2 x "<< N/2;
+  cout<<"Run summary: nvar = "<<nvar<<" =  2 x "<< nvar/2;
   cout<<", p = "<<p;
   cout<<", Converge rate ="<<rate_converge
       <<", cycles = "<<cycles
@@ -287,6 +280,8 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
   data->set(row_index,col_index,p);
   data->set(row_index,col_index+1,rate_converge);
   data->set(row_index,col_index+2,counts_total);
+  data->set(row_index,col_index+3,counts_nonconverge);
+  data->set(row_index,col_index+4,timer.toc());
   
   timer.toc_print();
   return 0;
