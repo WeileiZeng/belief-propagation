@@ -1,4 +1,4 @@
-# ! /usr/bin/gnuplot
+#!/usr/bin/gnuplot
 
 # parameter
 data_folder='result'
@@ -27,7 +27,7 @@ data_title='my-bp4-iter-9-fb-5-data-50-schedule-3'
 data_title='my-bp4-iter-9-fb-5-data-500-schedule-3'
 data_title='my-bp4-iter-9-fb-5-data-100-schedule-3-hpcc'
 data_title='bp4-iter-9-fb-5-data-1000-sch-3-min-sum'
-data_title='bp4-test-run'
+data_title='bp5-test-run'
 
 
 plot_title='-weight'
@@ -53,7 +53,7 @@ set format y "10^{%L}"
 set logscale x
 set format x "10^{%L}"
 #set xrange [0.01:0.021]
-set xrange [0.01:0.41]
+set xrange [0.015:0.25]
 #set yrange [0.01:1]
 set title "BP for toric code ".data_title.plot_title
 
@@ -70,9 +70,8 @@ size_set="13 9 5"
 
 
 # plot rate
-plot for [i=1:3] data_file using (column((i-1)*5+1)):(1-column((i-1)*5+2)) title 'size '.word(size_set,i) with linespoints ps 0.5 lc i
-#, \
-#[0.02:0.09] x*x*x*1000 title 'x^3' dt '.'
+plot for [i=1:3] data_file using (column((i-1)*5+1)):(1-column((i-1)*5+2)) title 'size '.word(size_set,i) with linespoints ps 0.5 lc i,\
+x*x*x*1000 title 'x^3'
 
 
 # plot weight of input error
@@ -92,4 +91,4 @@ plot for [i=1:3] data_file using (column((i-1)*5+1)):(1-column((i-1)*5+2)) title
 #pause -1 "hit any key to exit"
 
 
-# system "./build_index.sh"
+system "./build_index.sh"

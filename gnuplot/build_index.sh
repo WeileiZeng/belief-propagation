@@ -11,11 +11,14 @@ echo "<h2>result in hpcc. Latest first</h2>" >> index.html
 
 for f in $(ls -t hpcc_bp_plot/*.pdf)
 do
-echo $f
+# echo $f
 
 echo "<embed src=\"https://drive.google.com/viewerng/
 viewer?embedded=true&url=https://cluster.hpcc.ucr.edu/~wzeng002/gnuplot_bp/$f\" 
- width=\"500\" height = \"320\" >" >> index.html
+ width=\"500\" height = \"320\" >" 
+
+ echo "<embed src=\"$f\" 
+ width=\"500\" height = \"360\" >" >> index.html
 
 done
  

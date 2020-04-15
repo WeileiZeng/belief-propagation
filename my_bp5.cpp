@@ -18,7 +18,7 @@ using namespace itpp;
 // Read the code from files and do BP decoding
 //input:source file for stabilzier matrix; error propability p ;
 
-int decode( BP_Decoder, GF2mat G, GF2mat H, double p, mat * data, int col_index, int row_index, int cycles, int feedback, double time_out, int num_data_points);
+int decode( BP_Decoder,const  GF2mat G, const GF2mat H, const double p, mat * data, const int col_index, const int row_index, const int cycles, const int feedback, const double time_out, const int num_data_points, const int cores);
   
 int main(int argc, char **argv){
   Parser parser;
@@ -28,11 +28,7 @@ int main(int argc, char **argv){
   string filename_G, filename_H;
   //parser.get(filename_G,"filename_G");
   Real_Timer timer;   double remained_time; //remained time for each size
-  //vector<future<int>> pool;
-  int cores=32; parser.get(cores, "cores");
-  //vector<future<int>>::size_type pool_size = cores+2; //max number of threads, 15 with decreasing size for best performace
-  //std::chrono::milliseconds span (100);
-  //std::chrono::milliseconds final_thread_time (10000);//10 secs before prelimilary result print
+  int cores=16; parser.get(cores, "cores");
   string filename_data;
   filename_data="gnuplot/result/my-bp5-test.gnudat"; 
   parser.get(filename_data,"filename_data");
@@ -57,20 +53,6 @@ int main(int argc, char **argv){
 
   int exit_iteration=9; parser.get(exit_iteration,"exit_iteration");
   int schedule_mode=4; parser.get(schedule_mode, "schedule_mode");
-
-  //split tasks into smaller chunks
-  //int chunk_num_data_points=10;//number of data points in each chunk
-  //int chunk_size=num_data_points/chunk_num_data_points; //number of chunks for each p and size
-  //int chunk_num_for_each_size = chunk_size*((ip_begin-ip_end)/0.1);
-
-  //timeout should be 5 times longer in hpcc
-  //double chunk_time_out = 100.0;//time_out/chunk_size;
-  //parser.get(chunk_time_out,"chunk_time_out");
-  //int chunk_cycles=chunk_num_data_points*1000;//1000 for prob 1/1000
-
-  //mat chunk_data(data_rows*chunk_size,5*5);
-  //chunk_data.zeros();
-
 
   int col_index=-5;
   for ( int size : sizes){
@@ -98,80 +80,27 @@ int main(int argc, char **argv){
       //atof(argv[4]);
       p=pow(10,ip);
 
-     // for ( int ic=0; ic<chunk_size; ic++){
-	//row_index ++;
+   
+  decode( bp_decoder, G, H, p, & data,col_index, row_index, cycles, feedback, time_out, num_data_points, cores); 
 
-	//manage thread within limit of pool size
-	/*
-  while ( pool.size() >= pool_size ){
-	  //wait until some of them finish
-	  //break;
-	  for(vector <future<int>> :: iterator it = pool.begin(); it != pool.end(); ++it){
-	    //printf("%d", *it);
-	    if ( it->wait_for(span) == future_status::ready){
-	      //	    cout<<"."<<endl;
-	      pool.erase(it);	    
-	      //cout<<"remove thread. pool_size="<<pool.size()<<endl;
-	      it--;
-	      //break;
-	    }
-	  }
-	}
-   */ 
-	// future<int> fut = async(launch::async, decode,G, H, p, filename_result_p);
-	//pool.push_back(move(fut));
-	//pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & data,col_index, row_index, cycles, feedback, time_out, num_data_points) );
-	//pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & chunk_data,col_index, row_index, chunk_cycles, feedback, chunk_time_out, chunk_num_data_points) );
-  decode( bp_decoder, G, H, p, & data,col_index, row_index, cycles, feedback, time_out, num_data_points); 
-
-	//remained_time = timer.toc()/(row_index+1)*chunk_num_for_each_size;
-  std::cout
-     // cout<<"my_bp: add new thread. pool_size="<<pool.size()
-	  <<", size = "<<size
+	remained_time = timer.toc()/(row_index+1)*(data_rows-row_index-1);
+  std::cout<<", size = "<<size
 	  <<", p = "<<p
-	  //<<", row_index = "<<row_index<<"/"<<chunk_num_for_each_size
+	  <<", row_index = "<<row_index<<"/"<<data_rows
 	  <<", remained time for this p is "<< remained_time <<" sec"
 	  <<", col_index = "<<col_index
-	  //<<", chunk_cycles = "<<chunk_cycles
-	  <<endl;    
+	  <<std::endl;    
     }
   }
-  //finish adding all the threads and most of them are done
-  
-  //wait a bit for last threads
-  /*for(vector <future<int>> :: iterator it = pool.begin(); it != pool.end(); ++it){
-    it->wait_for(final_thread_time);
-  }*/
 
-  //print prelimilary result  
+
   string header="# header\n# sizes: ";
   for (int size : sizes){
     header += to_string(size) + ", ";
   }
   header += ("\n# p, P_c converge rate, counts_total, counts_nonconverge, timer.toc()");
-  //  mat2gnudata(data,filename_data,header);
-  //cout<<"save prelimilary data to "<<filename_data.c_str()<<endl;
 
-  //wait all process to finish
-  /*for(vector <future<int>> :: iterator it = pool.begin(); it != pool.end(); ++it){
-    it->get();
-  }*/
 
-  //process chunk_data to data
-  /*int temp_index;
-  double value;
-  for ( int i =0; i<data.rows();i++){
-    for ( int j = 0; j< data.cols();j++){
-      value=0;
-      for ( int k =0;k<chunk_size; k++){
-	temp_index = i* chunk_size+k;
-	value += chunk_data(temp_index,j);
-      }
-      value = value/chunk_size;
-      data.set(i,j,value);
-    }
-  }
-*/
   //print final result
   mat2gnudata(data,filename_data,header);
   cout<<"save final data to "<<filename_data.c_str()<<endl;
@@ -180,18 +109,12 @@ int main(int argc, char **argv){
 
 //*********************** bp decoding function by itpp
 
-int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, int col_index, int row_index, int cycles, int feedback, double time_out, int num_data_points){
+int decode( BP_Decoder bp_decoder, const GF2mat G, const GF2mat H, const double p,  mat * data, const int col_index, const int row_index, const int cycles, const int feedback, const double time_out, const int num_data_points, const int cores){
   //parameter setup
-  //int decode_mode = 2;
-  //  int cycles=1000;//10000;//number of cycles: fro toric code, 10000 give reletively clear result
-  //  int exit_at_iteration=9;//parameter for bp decoding set_exit_condition()
-  //  int bound= (int) -4096 * log (p/(1-p));// -300; see note.pdf on how to choose bound
-  const int bound = 0;
+  const double bound = 0;
   const int max_repetition = feedback;//10 for best result. supposed to be zero in our set up, just for a check
-  
   Real_Timer timer;
-  const int nvar = H.cols();
-  //int N = C.get_nvar(); // number of bits per codeword; N=2 x n x n is the size of the toric code.
+  const int nvar = H.cols(); // number of bits per codeword; N=2 x n x n is the size of the toric code.
   
   const bvec bitsin = zeros_b(nvar);//original zero vector
  
@@ -205,7 +128,7 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
 
   int counts_converge=0;
   int counts_nonconverge=0;
-  #pragma omp parallel for num_threads(18)
+  #pragma omp parallel for num_threads(cores)
   for (int i=0;i<cycles;i++){
   if ( counts_nonconverge < num_data_points){
     vec LLRin(nvar);
@@ -247,7 +170,8 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
     bitsout=bitsout+rec_bits+rec_bits0;//cancel input vector
     //bitsout=reduce_weight( bitsout, G);//remove trivial cycles
     rec_bits=rec_bits0;//replace for compatibility for saving data
-
+#pragma omp critical  
+{
     if(ans>=0){
       if ( current_iteration < 0 ){
 	//cout<<"-------------------------------make it converge after iteration."<<endl;
@@ -255,24 +179,9 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
       counts_converge++;
     }else{
       counts_nonconverge++;
-      //std::cout<<"counts_nonconverge = "<<counts_nonconverge<<std::endl;
-
-      /*
-      //time control
-      if (timer.toc()>time_out){
-	std::cout<<"timeout: "<<time_out<<std::endl;
-	break;
-      }
-      else if (counts_nonconverge == num_data_points/2){
-        //change number of cycles
-        cycles =min(cycles, i *2);
-        cycles=max(cycles, 50);
-        std::cout<<"update cycles to "<<cycles<<std::endl;
-        //std::cout<<i<<","<<counts_nonconverge<<", "
-        //	 << num_data_points<<std::endl;
-      }
-      */
+      //std::cout<<"counts_nonconverge = "<<counts_nonconverge<<std::endl;  
     }
+}
     }
   }
   //cout<<"counts_converge="<<counts_converge<<endl;
