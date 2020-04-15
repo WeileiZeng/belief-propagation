@@ -1,28 +1,29 @@
-#CXX=g++ -g -Wall  #for debug mode
-CXX=g++ -O3 -Wall -std=c++11 -pthread
-### -O2 -O5 -Os
-#g++ `pkg-config --cflags itpp` -o hello.out hello.cpp `pkg-config --libs itpp`
+opt = -O3
+### -O2 -O5 -Os                                                                                                                   
+pkgs = -L/opt/linux/centos/7.x/x86_64/pkgs
+itpp=${pkgs}/itpp/4.3.1/lib/ -litpp
+# INC_DIR=weilei_lib
+# CXX = g++ -Wall -g -m64 -std=c++0x ${opt} ${itpp}
+CXX = g++ -Wall -g -m64 -std=c++11 -pthread ${opt} ${itpp}
+CMD= -lm -lgmpxx -lgmp
 
-
-
-START=`pkg-config --cflags itpp`
-END=`pkg-config --libs itpp`
-#files=mm_read.c mm_read.h mmio.c mmio.h mm_write.c mm_write.h lib.cpp lib.h my_lib.h makefile
-#command=$(CXX) $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(END)
-
-
-#update:
 INC_DIR=~/working/weilei_lib
+# INC_DIR=../../weilei_lib
 files=$(INC_DIR)/mm_read.c $(INC_DIR)/mm_read.h $(INC_DIR)/mmio.c $(INC_DIR)/mmio.h $(INC_DIR)/mm_write.c $(INC_DIR)/mm_write.h $(INC_DIR)/lib.cpp $(INC_DIR)/lib.h $(INC_DIR)/dist.c $(INC_DIR)/dist.h $(INC_DIR)/concatenation_lib.c $(INC_DIR)/concatenation_lib.h $(INC_DIR)/bp.c $(INC_DIR)/bp.h $(INC_DIR)/bp_decoder.h $(INC_DIR)/my_lib.h makefile
-#command=$(CXX) -I../../weilei_lib $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(word 14, $^) $(END)
 
-command=$(CXX) -I $(INC_DIR) $(START) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(word 14, $^) $(word 15, $^) $(END) ; echo finish making
-#the last one is my_lib.h
+# command=$(CXX) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(CMD)
+
+# command=$(CXX) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8,  $(CMD)
+
+command=$(CXX) -I $(INC_DIR) -o $@ $< $(word 2,$^) $(word 4, $^) $(word 6, $^) $(word 8, $^) $(word 10, $^) $(word 12, $^) $(word 14, $^) $(word 15, $^) $(CMD) ; echo finish making
+
+
+
+
 
 
 all: parserTest.out ldpcTest.out test.out alist_test.out
-###include all headfiles into my_lib.h
-#pattern_observer.out:pattern_observer.c mm_read.c mm_read.h mmio.c mmio.h mm_write.c mm_write.h lib.cpp lib.h my_lib.h makefile
+
 
 partial_sum.out:partial_sum.c $(files)
 	$(command)
@@ -36,7 +37,7 @@ my_bp2.out:my_bp2.c $(files)
 	$(command)
 my_bp3.out:my_bp3.c $(files)
 	$(command)
-my_bp4.out:my_bp4.c $(files)
+my_bp4.out:my_bp4.cpp $(files)
 	$(command)
 #bp_decoding3.out:bp_decoding3.c mm_read.c mm_read.h mmio.c mmio.h mm_write.c mm_write.h lib.cpp lib.h my_lib.h makefile
 bp_decoding3.out:bp_decoding3.c $(files)

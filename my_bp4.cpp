@@ -219,6 +219,7 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
 
     bvec bitsout = llr_output < bound; //30;//0;//output
 
+
     //enhanced feedback
     int current_iteration = ans;
     for (int i_iteration = 0;i_iteration<max_repetition;i_iteration++){
