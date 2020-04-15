@@ -94,7 +94,7 @@ int main(int argc, char **argv){
     timer.tic();
     for ( double ip=ip_begin;ip > ip_end;ip-=0.1){
       //cout<<"ip = "<<ip<<endl;
-      //      row_index ++;
+            row_index ++;
       //atof(argv[4]);
       p=pow(10,ip);
 
@@ -122,7 +122,7 @@ int main(int argc, char **argv){
 	//pool.push_back(move(fut));
 	//pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & data,col_index, row_index, cycles, feedback, time_out, num_data_points) );
 	//pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & chunk_data,col_index, row_index, chunk_cycles, feedback, chunk_time_out, chunk_num_data_points) );
-  decode( bp_decoder, G, H, p, data,col_index, row_index, cycles, feedback, time_out, num_data_points); 
+  decode( bp_decoder, G, H, p, & data,col_index, row_index, cycles, feedback, time_out, num_data_points); 
 
 	//remained_time = timer.toc()/(row_index+1)*chunk_num_for_each_size;
   std::cout
@@ -133,8 +133,7 @@ int main(int argc, char **argv){
 	  <<", remained time for this p is "<< remained_time <<" sec"
 	  <<", col_index = "<<col_index
 	  //<<", chunk_cycles = "<<chunk_cycles
-	  <<endl;
-      }
+	  <<endl;    
     }
   }
   //finish adding all the threads and most of them are done
@@ -159,7 +158,7 @@ int main(int argc, char **argv){
   }*/
 
   //process chunk_data to data
-  int temp_index;
+  /*int temp_index;
   double value;
   for ( int i =0; i<data.rows();i++){
     for ( int j = 0; j< data.cols();j++){
@@ -172,7 +171,7 @@ int main(int argc, char **argv){
       data.set(i,j,value);
     }
   }
-
+*/
   //print final result
   mat2gnudata(data,filename_data,header);
   cout<<"save final data to "<<filename_data.c_str()<<endl;
@@ -206,7 +205,7 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
 
   int counts_converge=0;
   int counts_nonconverge=0;
-  #pragma omp parallel for num_threads(8)
+  #pragma omp parallel for num_threads(18)
   for (int i=0;i<cycles;i++){
   if ( counts_nonconverge < num_data_points){
     vec LLRin(nvar);
@@ -256,7 +255,7 @@ int decode( BP_Decoder bp_decoder, GF2mat G, GF2mat H, double p,  mat * data, in
       counts_converge++;
     }else{
       counts_nonconverge++;
-      std::cout<<"counts_nonconverge = "<<counts_nonconverge<<std::endl;
+      //std::cout<<"counts_nonconverge = "<<counts_nonconverge<<std::endl;
 
       /*
       //time control
