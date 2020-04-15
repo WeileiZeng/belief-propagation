@@ -38,8 +38,8 @@ int main(int argc, char **argv){
   parser.get(filename_data,"filename_data");
   
   int feedback=5; parser.get(feedback,"feedback");
-  //  int cycles = 1000000;//70 sec for 2,000,000
-  //  double time_out=200;//time out in seconds for each data points (p and size)
+    int cycles = 1000;//70 sec for 2,000,000
+    double time_out=20;//time out in seconds for each data points (p and size)
   int num_data_points = 100;//data entry for each data points
   parser.get(num_data_points, "num_data_points");
   //change parameter p, code size
@@ -59,17 +59,17 @@ int main(int argc, char **argv){
   int schedule_mode=4; parser.get(schedule_mode, "schedule_mode");
 
   //split tasks into smaller chunks
-  int chunk_num_data_points=10;//number of data points in each chunk
-  int chunk_size=num_data_points/chunk_num_data_points; //number of chunks for each p and size
-  int chunk_num_for_each_size = chunk_size*((ip_begin-ip_end)/0.1);
+  //int chunk_num_data_points=10;//number of data points in each chunk
+  //int chunk_size=num_data_points/chunk_num_data_points; //number of chunks for each p and size
+  //int chunk_num_for_each_size = chunk_size*((ip_begin-ip_end)/0.1);
 
   //timeout should be 5 times longer in hpcc
-  double chunk_time_out = 100.0;//time_out/chunk_size;
-  parser.get(chunk_time_out,"chunk_time_out");
-  int chunk_cycles=chunk_num_data_points*1000;//1000 for prob 1/1000
+  //double chunk_time_out = 100.0;//time_out/chunk_size;
+  //parser.get(chunk_time_out,"chunk_time_out");
+  //int chunk_cycles=chunk_num_data_points*1000;//1000 for prob 1/1000
 
-  mat chunk_data(data_rows*chunk_size,5*5);
-  chunk_data.zeros();
+  //mat chunk_data(data_rows*chunk_size,5*5);
+  //chunk_data.zeros();
 
 
   int col_index=-5;
@@ -98,8 +98,8 @@ int main(int argc, char **argv){
       //atof(argv[4]);
       p=pow(10,ip);
 
-      for ( int ic=0; ic<chunk_size; ic++){
-	row_index ++;
+     // for ( int ic=0; ic<chunk_size; ic++){
+	//row_index ++;
 
 	//manage thread within limit of pool size
 	/*
@@ -122,17 +122,17 @@ int main(int argc, char **argv){
 	//pool.push_back(move(fut));
 	//pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & data,col_index, row_index, cycles, feedback, time_out, num_data_points) );
 	//pool.push_back(async(launch::async, decode, bp_decoder, G, H, p, & chunk_data,col_index, row_index, chunk_cycles, feedback, chunk_time_out, chunk_num_data_points) );
-  decode( bp_decoder, G, H, p, & chunk_data,col_index, row_index, chunk_cycles, feedback, chunk_time_out, chunk_num_data_points); 
+  decode( bp_decoder, G, H, p, data,col_index, row_index, cycles, feedback, time_out, num_data_points); 
 
-	remained_time = timer.toc()/(row_index+1)*chunk_num_for_each_size;
+	//remained_time = timer.toc()/(row_index+1)*chunk_num_for_each_size;
   std::cout
      // cout<<"my_bp: add new thread. pool_size="<<pool.size()
 	  <<", size = "<<size
 	  <<", p = "<<p
-	  <<", row_index = "<<row_index<<"/"<<chunk_num_for_each_size
+	  //<<", row_index = "<<row_index<<"/"<<chunk_num_for_each_size
 	  <<", remained time for this p is "<< remained_time <<" sec"
 	  <<", col_index = "<<col_index
-	  <<", chunk_cycles = "<<chunk_cycles
+	  //<<", chunk_cycles = "<<chunk_cycles
 	  <<endl;
       }
     }
